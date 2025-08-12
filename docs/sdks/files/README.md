@@ -25,7 +25,7 @@ Please contact us if you need to increase these storage limits.
 ### Example Usage
 
 ```python
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 
 
@@ -68,7 +68,7 @@ Returns a list of files that belong to the user's organization.
 ### Example Usage
 
 ```python
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 
 
@@ -112,7 +112,7 @@ Returns information about a specific file.
 ### Example Usage
 
 ```python
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 
 
@@ -151,7 +151,7 @@ Delete a file.
 ### Example Usage
 
 ```python
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 
 
@@ -190,7 +190,7 @@ Download a file
 ### Example Usage
 
 ```python
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 
 
@@ -229,7 +229,7 @@ Get Signed Url
 ### Example Usage
 
 ```python
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 
 

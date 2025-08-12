@@ -1,9 +1,29 @@
 # TranscriptionStreamEvents
 
 
-## Fields
+## Supported Types
 
-| Field                                                                              | Type                                                                               | Required                                                                           | Description                                                                        |
-| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
-| `event`                                                                            | [models.TranscriptionStreamEventTypes](../models/transcriptionstreameventtypes.md) | :heavy_check_mark:                                                                 | N/A                                                                                |
-| `data`                                                                             | [models.TranscriptionStreamEventsData](../models/transcriptionstreameventsdata.md) | :heavy_check_mark:                                                                 | N/A                                                                                |
+### `models.TranscriptionStreamDone`
+
+```python
+value: models.TranscriptionStreamDone = /* values here */
+```
+
+### `models.TranscriptionStreamLanguage`
+
+```python
+value: models.TranscriptionStreamLanguage = /* values here */
+```
+
+### `models.TranscriptionStreamSegmentDelta`
+
+```python
+value: models.TranscriptionStreamSegmentDelta = /* values here */
+```
+
+### `models.TranscriptionStreamTextDelta`
+
+```python
+value: models.TranscriptionStreamTextDelta = /* values here */
+```
+

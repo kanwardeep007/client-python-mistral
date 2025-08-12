@@ -3,15 +3,15 @@
 
 ## Supported Types
 
-### `models.BaseModelCard`
+### `models.ClassifierJobOut`
 
 ```python
-value: models.BaseModelCard = /* values here */
+value: models.ClassifierJobOut = /* values here */
 ```
 
-### `models.FTModelCard`
+### `models.CompletionJobOut`
 
 ```python
-value: models.FTModelCard = /* values here */
+value: models.CompletionJobOut = /* values here */
 ```
 

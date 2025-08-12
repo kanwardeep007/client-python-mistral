@@ -23,7 +23,7 @@ Given a library, lists the document that have been uploaded to that library.
 ### Example Usage
 
 ```python
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 
 
@@ -68,7 +68,7 @@ Given a library, upload a new document to that library. It is queued for process
 ### Example Usage
 
 ```python
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 
 
@@ -112,7 +112,7 @@ Given a library and a document in this library, you can retrieve the metadata of
 ### Example Usage
 
 ```python
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 
 
@@ -153,7 +153,7 @@ Given a library and a document in that library, update the name of that document
 ### Example Usage
 
 ```python
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 
 
@@ -195,7 +195,7 @@ Given a library and a document in that library, delete that document. The docume
 ### Example Usage
 
 ```python
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 
 
@@ -231,7 +231,7 @@ Given a library and a document in that library, you can retrieve the text conten
 ### Example Usage
 
 ```python
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 
 
@@ -272,7 +272,7 @@ Given a library and a document in that library, retrieve the processing status o
 ### Example Usage
 
 ```python
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 
 
@@ -313,7 +313,7 @@ Given a library and a document in that library, retrieve the signed URL of a spe
 ### Example Usage
 
 ```python
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 
 
@@ -354,7 +354,7 @@ Given a library and a document in that library, retrieve the signed URL of text 
 ### Example Usage
 
 ```python
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 
 
@@ -395,7 +395,7 @@ Given a library and a document in that library, reprocess that document, it will
 ### Example Usage
 
 ```python
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 
 

@@ -17,7 +17,7 @@ Get a list of batch jobs for your organization and user.
 ### Example Usage
 
 ```python
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 
 
@@ -63,7 +63,7 @@ Create a new batch job, it will be queued for processing.
 ### Example Usage
 
 ```python
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 
 
@@ -109,7 +109,7 @@ Get a batch job details by its UUID.
 ### Example Usage
 
 ```python
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 
 
@@ -148,7 +148,7 @@ Request the cancellation of a batch job.
 ### Example Usage
 
 ```python
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 
 

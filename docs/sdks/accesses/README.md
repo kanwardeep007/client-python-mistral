@@ -16,7 +16,7 @@ Given a library, list all of the Entity that have access and to what level.
 ### Example Usage
 
 ```python
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 
 
@@ -56,7 +56,7 @@ Given a library id, you can create or update the access level of an entity. You 
 ### Example Usage
 
 ```python
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 
 
@@ -100,7 +100,7 @@ Given a library id, you can delete the access level of an entity. An owner canno
 ### Example Usage
 
 ```python
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 
 
