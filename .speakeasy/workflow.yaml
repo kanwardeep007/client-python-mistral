@@ -3,13 +3,13 @@ speakeasyVersion: 1.568.2
 sources:
     mistral-azure-source:
         inputs:
-        -   location: registry.speakeasyapi.dev/mistral-dev/mistral-dev/mistral-openapi-azure:main
+        -   location: ./mistral-openapi-azure.yaml
     mistral-google-cloud-source:
         inputs:
-        -   location: registry.speakeasyapi.dev/mistral-dev/mistral-dev/mistral-openapi-google-cloud:main
+        -   location: ./mistral-openapi-google-cloud.yaml
     mistral-openapi:
         inputs:
-        -   location: registry.speakeasyapi.dev/mistral-dev/mistral-dev/mistral-openapi:main
+        -   location: ./mistral-openapi-main.yaml
 targets:
     mistralai-azure-sdk:
         target: python
@@ -18,10 +18,6 @@ targets:
         publish:
             pypi:
                 token: $pypi_token
-        codeSamples:
-            registry:
-                location: registry.speakeasyapi.dev/mistral-dev/mistral-dev/mistral-openapi-azure-code-samples
-            blocking: false
     mistralai-gcp-sdk:
         target: python
         source: mistral-google-cloud-source
@@ -29,17 +25,9 @@ targets:
         publish:
             pypi:
                 token: $pypi_token
-        codeSamples:
-            registry:
-                location: registry.speakeasyapi.dev/mistral-dev/mistral-dev/mistral-openapi-google-cloud-code-samples
-            blocking: false
     mistralai-sdk:
         target: python
         source: mistral-openapi
         publish:
             pypi:
                 token: $pypi_token
-        codeSamples:
-            registry:
-                location: registry.speakeasyapi.dev/mistral-dev/mistral-dev/mistral-openapi-code-samples
-            blocking: false

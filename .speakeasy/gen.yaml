@@ -53,7 +53,7 @@ python:
   methodArguments: infer-optional-args
   moduleName: ""
   outputModelSuffix: output
-  packageName: mistralai
+  packageName: kdmistralai
   pytestFilterWarnings: []
   pytestTimeout: 0
   responseFormat: flat
