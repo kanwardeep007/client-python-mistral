@@ -39,9 +39,3 @@ value: models.FileChunk = /* values here */
 value: models.ThinkChunk = /* values here */
 ```
 
-### `models.AudioChunk`
-
-```python
-value: models.AudioChunk = /* values here */
-```
-

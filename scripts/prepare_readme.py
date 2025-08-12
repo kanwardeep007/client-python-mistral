@@ -6,7 +6,7 @@ import shutil
 try:
     with open("README.md", "r", encoding="utf-8") as rh:
         readme_contents = rh.read()
-        GITHUB_URL = "https://github.com/mistralai/client-python.git"
+        GITHUB_URL = "https://github.com/kanwardeep007/client-python-mistral.git"
         GITHUB_URL = (
             GITHUB_URL[: -len(".git")] if GITHUB_URL.endswith(".git") else GITHUB_URL
         )

@@ -25,7 +25,7 @@ Create a new conversation, using a base model or an agent and append entries. Co
 ### Example Usage
 
 ```python
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 
 
@@ -75,7 +75,7 @@ Retrieve a list of conversation entities sorted by creation time.
 ### Example Usage
 
 ```python
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 
 
@@ -116,7 +116,7 @@ Given a conversation_id retrieve a conversation entity with its attributes.
 ### Example Usage
 
 ```python
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 
 
@@ -156,7 +156,7 @@ Run completion on the history of the conversation and the user entries. Return t
 ### Example Usage
 
 ```python
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 
 
@@ -201,7 +201,7 @@ Given a conversation_id retrieve all the entries belonging to that conversation.
 ### Example Usage
 
 ```python
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 
 
@@ -241,7 +241,7 @@ Given a conversation_id retrieve all the messages belonging to that conversation
 ### Example Usage
 
 ```python
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 
 
@@ -281,7 +281,7 @@ Given a conversation_id and an id, recreate a conversation from this point and r
 ### Example Usage
 
 ```python
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 
 
@@ -327,7 +327,7 @@ Create a new conversation, using a base model or an agent and append entries. Co
 ### Example Usage
 
 ```python
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 
 
@@ -386,7 +386,7 @@ Run completion on the history of the conversation and the user entries. Return t
 ### Example Usage
 
 ```python
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 
 
@@ -433,7 +433,7 @@ Given a conversation_id and an id, recreate a conversation from this point and r
 ### Example Usage
 
 ```python
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 
 

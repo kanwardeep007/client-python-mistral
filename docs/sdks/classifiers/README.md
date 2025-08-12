@@ -19,7 +19,7 @@ Moderations
 ### Example Usage
 
 ```python
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 
 
@@ -63,7 +63,7 @@ Chat Moderations
 ### Example Usage
 
 ```python
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 
 
@@ -109,7 +109,7 @@ Classifications
 ### Example Usage
 
 ```python
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 
 
@@ -152,7 +152,7 @@ Chat Classifications
 ### Example Usage
 
 ```python
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 
 

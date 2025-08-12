@@ -3,13 +3,15 @@ speakeasyVersion: 1.568.2
 sources:
     mistral-azure-source:
         inputs:
-        -   location: ./mistral-openapi-azure.yaml
+            - location: ./mistral-openapi-azure.yaml
     mistral-google-cloud-source:
         inputs:
-        -   location: ./mistral-openapi-google-cloud.yaml
+            - location: ./mistral-openapi-google-cloud.yaml
     mistral-openapi:
         inputs:
-        -   location: ./mistral-openapi-main.yaml
+            - location: ./mistral-openapi-main.yaml
+        registry:
+            location: registry.speakeasyapi.dev/speakeasy-self/speakeasy-self/mistral-openapi
 targets:
     mistralai-azure-sdk:
         target: python

@@ -17,7 +17,7 @@ FIM completion.
 ### Example Usage
 
 ```python
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 
 
@@ -66,7 +66,7 @@ Mistral AI provides the ability to stream responses back to a client in order to
 ### Example Usage
 
 ```python
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 
 

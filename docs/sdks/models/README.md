@@ -21,7 +21,7 @@ List all models available to the user.
 ### Example Usage
 
 ```python
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 
 
@@ -60,7 +60,7 @@ Retrieve information about a model.
 ### Example Usage
 
 ```python
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 
 
@@ -100,7 +100,7 @@ Delete a fine-tuned model.
 ### Example Usage
 
 ```python
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 
 
@@ -140,7 +140,7 @@ Update a model name or description.
 ### Example Usage
 
 ```python
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 
 
@@ -181,7 +181,7 @@ Archive a fine-tuned model.
 ### Example Usage
 
 ```python
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 
 
@@ -220,7 +220,7 @@ Un-archive a fine-tuned model.
 ### Example Usage
 
 ```python
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 
 
