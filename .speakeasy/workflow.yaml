@@ -9,9 +9,7 @@ sources:
             - location: ./mistral-openapi-google-cloud.yaml
     mistral-openapi:
         inputs:
-            - location: ./mistral-openapi-main.yaml
-        registry:
-            location: registry.speakeasyapi.dev/speakeasy-self/speakeasy-self/mistral-openapi
+            - location: ./mistral-openapi-main-old.yaml
 targets:
     mistralai-azure-sdk:
         target: python
