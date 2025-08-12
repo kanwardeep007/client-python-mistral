@@ -5,7 +5,7 @@ This example shows how to create chat completions.
 
 ```python
 # Synchronous Example
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 
 
@@ -30,7 +30,7 @@ The same SDK client can also be used to make asychronous requests by importing a
 ```python
 # Asynchronous Example
 import asyncio
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 
 async def main():
@@ -58,7 +58,7 @@ This example shows how to upload a file.
 
 ```python
 # Synchronous Example
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 
 
@@ -81,7 +81,7 @@ The same SDK client can also be used to make asychronous requests by importing a
 ```python
 # Asynchronous Example
 import asyncio
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 
 async def main():
@@ -107,7 +107,7 @@ This example shows how to create agents completions.
 
 ```python
 # Synchronous Example
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 
 
@@ -132,7 +132,7 @@ The same SDK client can also be used to make asychronous requests by importing a
 ```python
 # Asynchronous Example
 import asyncio
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 
 async def main():
@@ -160,7 +160,7 @@ This example shows how to create embedding request.
 
 ```python
 # Synchronous Example
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 
 
@@ -183,7 +183,7 @@ The same SDK client can also be used to make asychronous requests by importing a
 ```python
 # Asynchronous Example
 import asyncio
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 
 async def main():

@@ -20,7 +20,7 @@ Create a new agent giving it instructions, tools, description. The agent is then
 ### Example Usage
 
 ```python
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 
 
@@ -66,7 +66,7 @@ Retrieve a list of agent entities sorted by creation time.
 ### Example Usage
 
 ```python
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 
 
@@ -107,7 +107,7 @@ Given an agent retrieve an agent entity with its attributes.
 ### Example Usage
 
 ```python
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 
 
@@ -147,7 +147,7 @@ Update an agent attributes and create a new version.
 ### Example Usage
 
 ```python
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 
 
@@ -194,7 +194,7 @@ Switch the version of an agent.
 ### Example Usage
 
 ```python
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 
 

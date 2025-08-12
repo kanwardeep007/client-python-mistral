@@ -16,7 +16,7 @@ Embeddings
 ### Example Usage
 
 ```python
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 
 

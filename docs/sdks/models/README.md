@@ -7,51 +7,11 @@ Model Management API
 
 ### Available Operations
 
-* [list](#list) - List Models
 * [retrieve](#retrieve) - Retrieve Model
 * [delete](#delete) - Delete Model
 * [update](#update) - Update Fine Tuned Model
 * [archive](#archive) - Archive Fine Tuned Model
 * [unarchive](#unarchive) - Unarchive Fine Tuned Model
-
-## list
-
-List all models available to the user.
-
-### Example Usage
-
-```python
-from mistralai import Mistral
-import os
-
-
-with Mistral(
-    api_key=os.getenv("MISTRAL_API_KEY", ""),
-) as mistral:
-
-    res = mistral.models.list()
-
-    # Handle response
-    print(res)
-
-```
-
-### Parameters
-
-| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
-| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
-| `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
-
-### Response
-
-**[models.ModelList](../../models/modellist.md)**
-
-### Errors
-
-| Error Type                 | Status Code                | Content Type               |
-| -------------------------- | -------------------------- | -------------------------- |
-| models.HTTPValidationError | 422                        | application/json           |
-| models.SDKError            | 4XX, 5XX                   | \*/\*                      |
 
 ## retrieve
 
@@ -60,7 +20,7 @@ Retrieve information about a model.
 ### Example Usage
 
 ```python
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 
 
@@ -100,7 +60,7 @@ Delete a fine-tuned model.
 ### Example Usage
 
 ```python
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 
 
@@ -140,7 +100,7 @@ Update a model name or description.
 ### Example Usage
 
 ```python
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 
 
@@ -181,7 +141,7 @@ Archive a fine-tuned model.
 ### Example Usage
 
 ```python
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 
 
@@ -220,7 +180,7 @@ Un-archive a fine-tuned model.
 ### Example Usage
 
 ```python
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 
 

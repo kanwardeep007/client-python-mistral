@@ -65,7 +65,7 @@ The SDK can be installed with either *pip* or *poetry* package managers.
 *PIP* is the default package installer for Python, enabling easy installation and management of packages from PyPI via the command line.
 
 ```bash
-pip install mistralai
+pip install kdmistralai
 ```
 
 ### Poetry
@@ -73,7 +73,7 @@ pip install mistralai
 *Poetry* is a modern tool that simplifies dependency management and package publishing by using a single `pyproject.toml` file to handle project metadata and dependencies.
 
 ```bash
-poetry add mistralai
+poetry add kdmistralai
 ```
 
 ### Shell and script usage with `uv`
@@ -81,7 +81,7 @@ poetry add mistralai
 You can use this SDK in a Python shell with [uv](https://docs.astral.sh/uv/) and the `uvx` command that comes with it like so:
 
 ```shell
-uvx --from mistralai python
+uvx --from kdmistralai python
 ```
 
 It's also possible to write a standalone Python script without needing to set up a whole project like so:
@@ -91,11 +91,11 @@ It's also possible to write a standalone Python script without needing to set up
 # /// script
 # requires-python = ">=3.9"
 # dependencies = [
-#     "mistralai",
+#     "kdmistralai",
 # ]
 # ///
 
-from mistralai import Mistral
+from kdmistralai import Mistral
 
 sdk = Mistral(
   # SDK arguments
@@ -129,7 +129,7 @@ This example shows how to create chat completions.
 
 ```python
 # Synchronous Example
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 
 
@@ -154,7 +154,7 @@ The same SDK client can also be used to make asychronous requests by importing a
 ```python
 # Asynchronous Example
 import asyncio
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 
 async def main():
@@ -182,7 +182,7 @@ This example shows how to upload a file.
 
 ```python
 # Synchronous Example
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 
 
@@ -205,7 +205,7 @@ The same SDK client can also be used to make asychronous requests by importing a
 ```python
 # Asynchronous Example
 import asyncio
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 
 async def main():
@@ -231,7 +231,7 @@ This example shows how to create agents completions.
 
 ```python
 # Synchronous Example
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 
 
@@ -256,7 +256,7 @@ The same SDK client can also be used to make asychronous requests by importing a
 ```python
 # Asynchronous Example
 import asyncio
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 
 async def main():
@@ -284,7 +284,7 @@ This example shows how to create embedding request.
 
 ```python
 # Synchronous Example
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 
 
@@ -307,7 +307,7 @@ The same SDK client can also be used to make asychronous requests by importing a
 ```python
 # Asynchronous Example
 import asyncio
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 
 async def main():
@@ -547,7 +547,6 @@ The documentation for the GCP SDK is available [here](packages/mistralai_gcp/REA
 
 ### [models](docs/sdks/models/README.md)
 
-* [list](docs/sdks/models/README.md#list) - List Models
 * [retrieve](docs/sdks/models/README.md#retrieve) - Retrieve Model
 * [delete](docs/sdks/models/README.md#delete) - Delete Model
 * [update](docs/sdks/models/README.md#update) - Update Fine Tuned Model
@@ -574,7 +573,7 @@ The stream is also a [Context Manager][context-manager] and can be used with the
 underlying connection when the context is exited.
 
 ```python
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 
 
@@ -614,7 +613,7 @@ Certain SDK methods accept file objects as part of a request body or multi-part 
 >
 
 ```python
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 
 
@@ -640,8 +639,8 @@ Some of the endpoints in this SDK support retries. If you use the SDK without an
 
 To change the default retry strategy for a single API call, simply provide a `RetryConfig` object to the call:
 ```python
-from mistralai import Mistral
-from mistralai.utils import BackoffStrategy, RetryConfig
+from kdmistralai import Mistral
+from kdmistralai.utils import BackoffStrategy, RetryConfig
 import os
 
 
@@ -649,7 +648,7 @@ with Mistral(
     api_key=os.getenv("MISTRAL_API_KEY", ""),
 ) as mistral:
 
-    res = mistral.models.list(,
+    res = mistral.models.retrieve(model_id="ft:open-mistral-7b:587a6b29:20240514:7e773925",
         RetryConfig("backoff", BackoffStrategy(1, 50, 1.1, 100), False))
 
     # Handle response
@@ -659,8 +658,8 @@ with Mistral(
 
 If you'd like to override the default retry strategy for all operations that support retries, you can use the `retry_config` optional parameter when initializing the SDK:
 ```python
-from mistralai import Mistral
-from mistralai.utils import BackoffStrategy, RetryConfig
+from kdmistralai import Mistral
+from kdmistralai.utils import BackoffStrategy, RetryConfig
 import os
 
 
@@ -669,7 +668,7 @@ with Mistral(
     api_key=os.getenv("MISTRAL_API_KEY", ""),
 ) as mistral:
 
-    res = mistral.models.list()
+    res = mistral.models.retrieve(model_id="ft:open-mistral-7b:587a6b29:20240514:7e773925")
 
     # Handle response
     print(res)
@@ -691,7 +690,7 @@ By default, an API error will raise a models.SDKError exception, which has the f
 | `.raw_response` | *httpx.Response* | The raw HTTP response |
 | `.body`         | *str*            | The response content  |
 
-When custom error responses are specified for an operation, the SDK may also raise their associated exceptions. You can refer to respective *Errors* tables in SDK docs for more details on possible exception types for each operation. For example, the `list_async` method may raise the following exceptions:
+When custom error responses are specified for an operation, the SDK may also raise their associated exceptions. You can refer to respective *Errors* tables in SDK docs for more details on possible exception types for each operation. For example, the `retrieve_async` method may raise the following exceptions:
 
 | Error Type                 | Status Code | Content Type     |
 | -------------------------- | ----------- | ---------------- |
@@ -701,7 +700,7 @@ When custom error responses are specified for an operation, the SDK may also rai
 ### Example
 
 ```python
-from mistralai import Mistral, models
+from kdmistralai import Mistral, models
 import os
 
 
@@ -711,7 +710,7 @@ with Mistral(
     res = None
     try:
 
-        res = mistral.models.list()
+        res = mistral.models.retrieve(model_id="ft:open-mistral-7b:587a6b29:20240514:7e773925")
 
         # Handle response
         print(res)
@@ -739,7 +738,7 @@ You can override the default server globally by passing a server name to the `se
 #### Example
 
 ```python
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 
 
@@ -748,7 +747,7 @@ with Mistral(
     api_key=os.getenv("MISTRAL_API_KEY", ""),
 ) as mistral:
 
-    res = mistral.models.list()
+    res = mistral.models.retrieve(model_id="ft:open-mistral-7b:587a6b29:20240514:7e773925")
 
     # Handle response
     print(res)
@@ -759,7 +758,7 @@ with Mistral(
 
 The default server can also be overridden globally by passing a URL to the `server_url: str` optional parameter when initializing the SDK client instance. For example:
 ```python
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 
 
@@ -768,7 +767,7 @@ with Mistral(
     api_key=os.getenv("MISTRAL_API_KEY", ""),
 ) as mistral:
 
-    res = mistral.models.list()
+    res = mistral.models.retrieve(model_id="ft:open-mistral-7b:587a6b29:20240514:7e773925")
 
     # Handle response
     print(res)
@@ -785,7 +784,7 @@ This allows you to wrap the client with your own custom logic, such as adding cu
 
 For example, you could specify a header for every request that this sdk makes as follows:
 ```python
-from mistralai import Mistral
+from kdmistralai import Mistral
 import httpx
 
 http_client = httpx.Client(headers={"x-custom-header": "someValue"})
@@ -794,8 +793,8 @@ s = Mistral(client=http_client)
 
 or you could wrap the client with your own custom logic:
 ```python
-from mistralai import Mistral
-from mistralai.httpclient import AsyncHttpClient
+from kdmistralai import Mistral
+from kdmistralai.httpclient import AsyncHttpClient
 import httpx
 
 class CustomClient(AsyncHttpClient):
@@ -870,7 +869,7 @@ This SDK supports the following security scheme globally:
 
 To authenticate with the API the `api_key` parameter must be set when initializing the SDK client instance. For example:
 ```python
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 
 
@@ -878,7 +877,7 @@ with Mistral(
     api_key=os.getenv("MISTRAL_API_KEY", ""),
 ) as mistral:
 
-    res = mistral.models.list()
+    res = mistral.models.retrieve(model_id="ft:open-mistral-7b:587a6b29:20240514:7e773925")
 
     # Handle response
     print(res)
@@ -894,7 +893,7 @@ The `Mistral` class implements the context manager protocol and registers a fina
 [context-manager]: https://docs.python.org/3/reference/datamodel.html#context-managers
 
 ```python
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 def main():
 
@@ -921,11 +920,11 @@ You can setup your SDK to emit debug logs for SDK requests and responses.
 
 You can pass your own logger class directly into your SDK.
 ```python
-from mistralai import Mistral
+from kdmistralai import Mistral
 import logging
 
 logging.basicConfig(level=logging.DEBUG)
-s = Mistral(debug_logger=logging.getLogger("mistralai"))
+s = Mistral(debug_logger=logging.getLogger("kdmistralai"))
 ```
 
 You can also enable a default debug logger by setting an environment variable `MISTRAL_DEBUG` to true.

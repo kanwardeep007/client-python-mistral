@@ -20,7 +20,7 @@ List all libraries that you have created or have been shared with you.
 ### Example Usage
 
 ```python
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 
 
@@ -58,7 +58,7 @@ Create a new Library, you will be marked as the owner and only you will have the
 ### Example Usage
 
 ```python
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 
 
@@ -100,7 +100,7 @@ Given a library id, details information about that Library.
 ### Example Usage
 
 ```python
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 
 
@@ -140,7 +140,7 @@ Given a library id, deletes it together with all documents that have been upload
 ### Example Usage
 
 ```python
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 
 
@@ -180,7 +180,7 @@ Given a library id, you can update the name and description.
 ### Example Usage
 
 ```python
-from mistralai import Mistral
+from kdmistralai import Mistral
 import os
 
 
