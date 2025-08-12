@@ -90,33 +90,6 @@ paths:
                 title: Create Chat Completions
                 description: This example shows how to create chat completions.
                 position: 1
-    /rawPredict#fim:
-        post:
-            summary: Fim Completion
-            operationId: fim_completion_v1_fim_completions_post
-            requestBody:
-                content:
-                    application/json:
-                        schema:
-                            $ref: '#/components/schemas/FIMCompletionRequest'
-                required: true
-            responses:
-                '200':
-                    description: Successful Response
-                    content:
-                        application/json:
-                            schema:
-                                $ref: '#/components/schemas/FIMCompletionResponse'
-                '422':
-                    description: Validation Error
-                    content:
-                        application/json:
-                            schema:
-                                $ref: '#/components/schemas/HTTPValidationError'
-            description: FIM completion.
-            tags:
-                - fim
-            x-speakeasy-name-override: complete
 components:
     schemas:
         HTTPValidationError:

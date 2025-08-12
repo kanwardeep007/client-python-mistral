@@ -4,34 +4,6 @@ info:
     description: Our Chat Completion and Embeddings APIs specification. Create your account on [La Plateforme](https://console.mistral.ai) to get access and read the [docs](https://docs.mistral.ai) to learn how to use it.
     version: 1.0.0
 paths:
-    /chat/completions#stream:
-        post:
-            tags:
-                - chat
-            operationId: stream_chat
-            x-speakeasy-name-override: stream
-            summary: Stream chat completion
-            description: 'Mistral AI provides the ability to stream responses back to a client in order to allow partial results for certain requests. Tokens will be sent as data-only server-sent events as they become available, with the stream terminated by a data: [DONE] message. Otherwise, the server will hold the request open until the timeout or until completion, with the response containing the full result as JSON.'
-            requestBody:
-                required: true
-                content:
-                    application/json:
-                        schema:
-                            $ref: '#/components/schemas/ChatCompletionStreamRequest'
-            responses:
-                '200':
-                    description: A stream of chat completion events
-                    content:
-                        text/event-stream:
-                            x-speakeasy-sse-sentinel: '[DONE]'
-                            schema:
-                                $ref: '#/components/schemas/CompletionEvent'
-                '422':
-                    description: Validation Error
-                    content:
-                        application/json:
-                            schema:
-                                $ref: '#/components/schemas/HTTPValidationError'
     /chat/completions:
         post:
             summary: Chat Completion

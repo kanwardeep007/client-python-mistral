@@ -4,27 +4,6 @@ info:
     description: Our Chat Completion and Embeddings APIs specification. Create your account on [La Plateforme](https://console.mistral.ai) to get access and read the [docs](https://docs.mistral.ai) to learn how to use it.
     version: 1.0.0
 paths:
-    /v1/models:
-        get:
-            summary: List Models
-            description: List all models available to the user.
-            operationId: list_models_v1_models_get
-            responses:
-                '200':
-                    description: Successful Response
-                    content:
-                        application/json:
-                            schema:
-                                $ref: '#/components/schemas/ModelList'
-                '422':
-                    description: Validation Error
-                    content:
-                        application/json:
-                            schema:
-                                $ref: '#/components/schemas/HTTPValidationError'
-            tags:
-                - models
-            x-speakeasy-name-override: list
     /v1/models/{model_id}:
         get:
             summary: Retrieve Model
