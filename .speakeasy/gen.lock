@@ -1,26 +1,27 @@
 lockVersion: 2.0.0
 id: 2d045ec7-2ebb-4f4d-ad25-40953b132161
 management:
-  docChecksum: e9577267ced047cdf210c97679d37e9a
+  docChecksum: e0186c33d0269977e1790dfcc7d11aac
   docVersion: 1.0.0
-  speakeasyVersion: 1.568.2
-  generationVersion: 2.634.2
-  releaseVersion: 1.10.0
-  configChecksum: 79c8e6fb3d907ea93899e68ad5b5703d
-  repoURL: https://github.com/speakeasy-sdks/client-python-mistral-test.git
-  installationURL: https://github.com/speakeasy-sdks/client-python-mistral-test.git
+  speakeasyVersion: 1.603.2
+  generationVersion: 2.681.8
+  releaseVersion: 1.10.1
+  configChecksum: be1d2e043cd3331ee54cb72d0ebdd0d8
+  repoURL: https://github.com/kanwardeep007/client-python-mistral.git
+  installationURL: https://github.com/kanwardeep007/client-python-mistral.git
   published: true
 features:
   python:
     additionalDependencies: 1.0.0
+    configurableModuleName: 0.2.0
     constsAndDefaults: 1.0.5
-    core: 5.19.3
+    core: 5.19.8
     customCodeRegions: 0.1.1
     defaultEnabledRetries: 0.2.0
     downloadStreams: 1.0.1
     enumUnions: 0.1.0
     envVarSecurityUsage: 0.3.2
-    examples: 3.0.1
+    examples: 3.0.2
     flatRequests: 1.0.1
     flattening: 3.1.1
     globalSecurity: 3.0.3
@@ -42,7 +43,6 @@ features:
     uploadStreams: 1.0.0
 generatedFiles:
   - .gitattributes
-  - .python-version
   - .vscode/settings.json
   - USAGE.md
   - docs/models/agent.md
@@ -89,9 +89,6 @@ generatedFiles:
   - docs/models/assistantmessage.md
   - docs/models/assistantmessagecontent.md
   - docs/models/assistantmessagerole.md
-  - docs/models/audiolanguagechunk.md
-  - docs/models/audiotranscriptionrequest.md
-  - docs/models/audiotranscriptionrequeststream.md
   - docs/models/basemodelcard.md
   - docs/models/batcherror.md
   - docs/models/batchjobin.md
@@ -186,9 +183,6 @@ generatedFiles:
   - docs/models/document.md
   - docs/models/documentlibrarytool.md
   - docs/models/documentlibrarytooltype.md
-  - docs/models/documentout.md
-  - docs/models/documenttextcontent.md
-  - docs/models/documentupdatein.md
   - docs/models/documenturlchunk.md
   - docs/models/documenturlchunktype.md
   - docs/models/embeddingdtype.md
@@ -196,7 +190,6 @@ generatedFiles:
   - docs/models/embeddingrequestinputs.md
   - docs/models/embeddingresponse.md
   - docs/models/embeddingresponsedata.md
-  - docs/models/entitytype.md
   - docs/models/entries.md
   - docs/models/eventout.md
   - docs/models/file.md
@@ -220,7 +213,6 @@ generatedFiles:
   - docs/models/ftclassifierlossfunction.md
   - docs/models/ftmodelcapabilitiesout.md
   - docs/models/ftmodelcard.md
-  - docs/models/ftmodelcardtype.md
   - docs/models/function.md
   - docs/models/functioncall.md
   - docs/models/functioncallentry.md
@@ -275,42 +267,19 @@ generatedFiles:
   - docs/models/jobsapiroutesfinetuningupdatefinetunedmodelrequest.md
   - docs/models/jobsapiroutesfinetuningupdatefinetunedmodelresponse.md
   - docs/models/jobsout.md
+  - docs/models/jobsoutdata.md
   - docs/models/jobsoutobject.md
   - docs/models/jobtype.md
   - docs/models/jsonschema.md
   - docs/models/legacyjobmetadataout.md
   - docs/models/legacyjobmetadataoutobject.md
-  - docs/models/librariesdeletev1request.md
-  - docs/models/librariesdocumentsdeletev1request.md
-  - docs/models/librariesdocumentsgetextractedtextsignedurlv1request.md
-  - docs/models/librariesdocumentsgetsignedurlv1request.md
-  - docs/models/librariesdocumentsgetstatusv1request.md
-  - docs/models/librariesdocumentsgettextcontentv1request.md
-  - docs/models/librariesdocumentsgetv1request.md
-  - docs/models/librariesdocumentslistv1request.md
-  - docs/models/librariesdocumentsreprocessv1request.md
-  - docs/models/librariesdocumentsupdatev1request.md
-  - docs/models/librariesdocumentsuploadv1documentupload.md
-  - docs/models/librariesdocumentsuploadv1request.md
-  - docs/models/librariesgetv1request.md
-  - docs/models/librariessharecreatev1request.md
-  - docs/models/librariessharedeletev1request.md
-  - docs/models/librariessharelistv1request.md
-  - docs/models/librariesupdatev1request.md
-  - docs/models/libraryin.md
-  - docs/models/libraryinupdate.md
-  - docs/models/libraryout.md
-  - docs/models/listdocumentout.md
   - docs/models/listfilesout.md
-  - docs/models/listlibraryout.md
-  - docs/models/listsharingout.md
   - docs/models/loc.md
   - docs/models/messageentries.md
   - docs/models/messageinputcontentchunks.md
   - docs/models/messageinputentry.md
   - docs/models/messageinputentrycontent.md
   - docs/models/messageinputentryrole.md
-  - docs/models/messageinputentrytype.md
   - docs/models/messageoutputcontentchunks.md
   - docs/models/messageoutputentry.md
   - docs/models/messageoutputentrycontent.md
@@ -322,13 +291,13 @@ generatedFiles:
   - docs/models/messageoutputeventrole.md
   - docs/models/messageoutputeventtype.md
   - docs/models/messages.md
-  - docs/models/metadata.md
   - docs/models/metricout.md
   - docs/models/mistralpromptmode.md
   - docs/models/modelcapabilities.md
   - docs/models/modelconversation.md
   - docs/models/modelconversationobject.md
   - docs/models/modelconversationtools.md
+  - docs/models/modellist.md
   - docs/models/modeltype.md
   - docs/models/moderationobject.md
   - docs/models/moderationresponse.md
@@ -342,9 +311,7 @@ generatedFiles:
   - docs/models/one.md
   - docs/models/outputcontentchunks.md
   - docs/models/outputs.md
-  - docs/models/paginationinfo.md
   - docs/models/prediction.md
-  - docs/models/processingstatusout.md
   - docs/models/queryparamstatus.md
   - docs/models/referencechunk.md
   - docs/models/referencechunktype.md
@@ -365,10 +332,6 @@ generatedFiles:
   - docs/models/role.md
   - docs/models/sampletype.md
   - docs/models/security.md
-  - docs/models/shareenum.md
-  - docs/models/sharingdelete.md
-  - docs/models/sharingin.md
-  - docs/models/sharingout.md
   - docs/models/source.md
   - docs/models/ssetypes.md
   - docs/models/status.md
@@ -377,16 +340,10 @@ generatedFiles:
   - docs/models/systemmessagecontent.md
   - docs/models/textchunk.md
   - docs/models/textchunktype.md
-  - docs/models/thinkchunk.md
-  - docs/models/thinkchunktype.md
-  - docs/models/thinking.md
-  - docs/models/timestampgranularity.md
   - docs/models/tool.md
   - docs/models/toolcall.md
   - docs/models/toolchoice.md
   - docs/models/toolchoiceenum.md
-  - docs/models/toolexecutiondeltaevent.md
-  - docs/models/toolexecutiondeltaeventtype.md
   - docs/models/toolexecutiondoneevent.md
   - docs/models/toolexecutiondoneeventtype.md
   - docs/models/toolexecutionentry.md
@@ -404,13 +361,6 @@ generatedFiles:
   - docs/models/tools.md
   - docs/models/tooltypes.md
   - docs/models/trainingfile.md
-  - docs/models/transcriptionresponse.md
-  - docs/models/transcriptionsegmentchunk.md
-  - docs/models/transcriptionstreamdone.md
-  - docs/models/transcriptionstreamevents.md
-  - docs/models/transcriptionstreamlanguage.md
-  - docs/models/transcriptionstreamsegmentdelta.md
-  - docs/models/transcriptionstreamtextdelta.md
   - docs/models/two.md
   - docs/models/type.md
   - docs/models/unarchiveftmodelout.md
@@ -431,27 +381,22 @@ generatedFiles:
   - docs/models/websearchpremiumtooltype.md
   - docs/models/websearchtool.md
   - docs/models/websearchtooltype.md
-  - docs/sdks/accesses/README.md
   - docs/sdks/agents/README.md
-  - docs/sdks/audio/README.md
   - docs/sdks/batch/README.md
   - docs/sdks/beta/README.md
   - docs/sdks/chat/README.md
   - docs/sdks/classifiers/README.md
   - docs/sdks/conversations/README.md
-  - docs/sdks/documents/README.md
   - docs/sdks/embeddings/README.md
   - docs/sdks/files/README.md
   - docs/sdks/fim/README.md
   - docs/sdks/finetuning/README.md
   - docs/sdks/jobs/README.md
-  - docs/sdks/libraries/README.md
-  - docs/sdks/mistral/README.md
-  - docs/sdks/mistralagents/README.md
-  - docs/sdks/mistraljobs/README.md
+  - docs/sdks/kdmistral/README.md
+  - docs/sdks/kdmistralagents/README.md
+  - docs/sdks/kdmistraljobs/README.md
   - docs/sdks/models/README.md
   - docs/sdks/ocr/README.md
-  - docs/sdks/transcriptions/README.md
   - poetry.toml
   - py.typed
   - scripts/prepare_readme.py
@@ -461,25 +406,21 @@ generatedFiles:
   - src/kdmistralai/_hooks/sdkhooks.py
   - src/kdmistralai/_hooks/types.py
   - src/kdmistralai/_version.py
-  - src/kdmistralai/accesses.py
   - src/kdmistralai/agents.py
-  - src/kdmistralai/audio.py
   - src/kdmistralai/basesdk.py
   - src/kdmistralai/batch.py
   - src/kdmistralai/beta.py
   - src/kdmistralai/chat.py
   - src/kdmistralai/classifiers.py
   - src/kdmistralai/conversations.py
-  - src/kdmistralai/documents.py
   - src/kdmistralai/embeddings.py
   - src/kdmistralai/files.py
   - src/kdmistralai/fim.py
   - src/kdmistralai/fine_tuning.py
   - src/kdmistralai/httpclient.py
   - src/kdmistralai/jobs.py
-  - src/kdmistralai/libraries.py
-  - src/kdmistralai/mistral_agents.py
-  - src/kdmistralai/mistral_jobs.py
+  - src/kdmistralai/kdmistral_agents.py
+  - src/kdmistralai/kdmistral_jobs.py
   - src/kdmistralai/models/__init__.py
   - src/kdmistralai/models/agent.py
   - src/kdmistralai/models/agentconversation.py
@@ -505,9 +446,6 @@ generatedFiles:
   - src/kdmistralai/models/apiendpoint.py
   - src/kdmistralai/models/archiveftmodelout.py
   - src/kdmistralai/models/assistantmessage.py
-  - src/kdmistralai/models/audiolanguagechunk.py
-  - src/kdmistralai/models/audiotranscriptionrequest.py
-  - src/kdmistralai/models/audiotranscriptionrequeststream.py
   - src/kdmistralai/models/basemodelcard.py
   - src/kdmistralai/models/batcherror.py
   - src/kdmistralai/models/batchjobin.py
@@ -561,17 +499,12 @@ generatedFiles:
   - src/kdmistralai/models/deletemodelout.py
   - src/kdmistralai/models/deltamessage.py
   - src/kdmistralai/models/documentlibrarytool.py
-  - src/kdmistralai/models/documentout.py
-  - src/kdmistralai/models/documenttextcontent.py
-  - src/kdmistralai/models/documentupdatein.py
   - src/kdmistralai/models/documenturlchunk.py
   - src/kdmistralai/models/embeddingdtype.py
   - src/kdmistralai/models/embeddingrequest.py
   - src/kdmistralai/models/embeddingresponse.py
   - src/kdmistralai/models/embeddingresponsedata.py
-  - src/kdmistralai/models/entitytype.py
   - src/kdmistralai/models/eventout.py
-  - src/kdmistralai/models/file.py
   - src/kdmistralai/models/filechunk.py
   - src/kdmistralai/models/filepurpose.py
   - src/kdmistralai/models/files_api_routes_delete_fileop.py
@@ -622,29 +555,7 @@ generatedFiles:
   - src/kdmistralai/models/jobsout.py
   - src/kdmistralai/models/jsonschema.py
   - src/kdmistralai/models/legacyjobmetadataout.py
-  - src/kdmistralai/models/libraries_delete_v1op.py
-  - src/kdmistralai/models/libraries_documents_delete_v1op.py
-  - src/kdmistralai/models/libraries_documents_get_extracted_text_signed_url_v1op.py
-  - src/kdmistralai/models/libraries_documents_get_signed_url_v1op.py
-  - src/kdmistralai/models/libraries_documents_get_status_v1op.py
-  - src/kdmistralai/models/libraries_documents_get_text_content_v1op.py
-  - src/kdmistralai/models/libraries_documents_get_v1op.py
-  - src/kdmistralai/models/libraries_documents_list_v1op.py
-  - src/kdmistralai/models/libraries_documents_reprocess_v1op.py
-  - src/kdmistralai/models/libraries_documents_update_v1op.py
-  - src/kdmistralai/models/libraries_documents_upload_v1op.py
-  - src/kdmistralai/models/libraries_get_v1op.py
-  - src/kdmistralai/models/libraries_share_create_v1op.py
-  - src/kdmistralai/models/libraries_share_delete_v1op.py
-  - src/kdmistralai/models/libraries_share_list_v1op.py
-  - src/kdmistralai/models/libraries_update_v1op.py
-  - src/kdmistralai/models/libraryin.py
-  - src/kdmistralai/models/libraryinupdate.py
-  - src/kdmistralai/models/libraryout.py
-  - src/kdmistralai/models/listdocumentout.py
   - src/kdmistralai/models/listfilesout.py
-  - src/kdmistralai/models/listlibraryout.py
-  - src/kdmistralai/models/listsharingout.py
   - src/kdmistralai/models/messageentries.py
   - src/kdmistralai/models/messageinputcontentchunks.py
   - src/kdmistralai/models/messageinputentry.py
@@ -652,11 +563,14 @@ generatedFiles:
   - src/kdmistralai/models/messageoutputentry.py
   - src/kdmistralai/models/messageoutputevent.py
   - src/kdmistralai/models/metricout.py
+  - src/kdmistralai/models/mistralerror.py
   - src/kdmistralai/models/mistralpromptmode.py
   - src/kdmistralai/models/modelcapabilities.py
   - src/kdmistralai/models/modelconversation.py
+  - src/kdmistralai/models/modellist.py
   - src/kdmistralai/models/moderationobject.py
   - src/kdmistralai/models/moderationresponse.py
+  - src/kdmistralai/models/no_response_error.py
   - src/kdmistralai/models/ocrimageobject.py
   - src/kdmistralai/models/ocrpagedimensions.py
   - src/kdmistralai/models/ocrpageobject.py
@@ -664,35 +578,27 @@ generatedFiles:
   - src/kdmistralai/models/ocrresponse.py
   - src/kdmistralai/models/ocrusageinfo.py
   - src/kdmistralai/models/outputcontentchunks.py
-  - src/kdmistralai/models/paginationinfo.py
   - src/kdmistralai/models/prediction.py
-  - src/kdmistralai/models/processingstatusout.py
   - src/kdmistralai/models/referencechunk.py
   - src/kdmistralai/models/responsedoneevent.py
   - src/kdmistralai/models/responseerrorevent.py
   - src/kdmistralai/models/responseformat.py
   - src/kdmistralai/models/responseformats.py
   - src/kdmistralai/models/responsestartedevent.py
+  - src/kdmistralai/models/responsevalidationerror.py
   - src/kdmistralai/models/retrieve_model_v1_models_model_id_getop.py
   - src/kdmistralai/models/retrievefileout.py
   - src/kdmistralai/models/sampletype.py
   - src/kdmistralai/models/sdkerror.py
   - src/kdmistralai/models/security.py
-  - src/kdmistralai/models/shareenum.py
-  - src/kdmistralai/models/sharingdelete.py
-  - src/kdmistralai/models/sharingin.py
-  - src/kdmistralai/models/sharingout.py
   - src/kdmistralai/models/source.py
   - src/kdmistralai/models/ssetypes.py
   - src/kdmistralai/models/systemmessage.py
   - src/kdmistralai/models/textchunk.py
-  - src/kdmistralai/models/thinkchunk.py
-  - src/kdmistralai/models/timestampgranularity.py
   - src/kdmistralai/models/tool.py
   - src/kdmistralai/models/toolcall.py
   - src/kdmistralai/models/toolchoice.py
   - src/kdmistralai/models/toolchoiceenum.py
-  - src/kdmistralai/models/toolexecutiondeltaevent.py
   - src/kdmistralai/models/toolexecutiondoneevent.py
   - src/kdmistralai/models/toolexecutionentry.py
   - src/kdmistralai/models/toolexecutionstartedevent.py
@@ -701,13 +607,6 @@ generatedFiles:
   - src/kdmistralai/models/toolreferencechunk.py
   - src/kdmistralai/models/tooltypes.py
   - src/kdmistralai/models/trainingfile.py
-  - src/kdmistralai/models/transcriptionresponse.py
-  - src/kdmistralai/models/transcriptionsegmentchunk.py
-  - src/kdmistralai/models/transcriptionstreamdone.py
-  - src/kdmistralai/models/transcriptionstreamevents.py
-  - src/kdmistralai/models/transcriptionstreamlanguage.py
-  - src/kdmistralai/models/transcriptionstreamsegmentdelta.py
-  - src/kdmistralai/models/transcriptionstreamtextdelta.py
   - src/kdmistralai/models/unarchiveftmodelout.py
   - src/kdmistralai/models/updateftmodelin.py
   - src/kdmistralai/models/uploadfileout.py
@@ -723,7 +622,6 @@ generatedFiles:
   - src/kdmistralai/py.typed
   - src/kdmistralai/sdk.py
   - src/kdmistralai/sdkconfiguration.py
-  - src/kdmistralai/transcriptions.py
   - src/kdmistralai/types/__init__.py
   - src/kdmistralai/types/basemodel.py
   - src/kdmistralai/utils/__init__.py
@@ -740,6 +638,7 @@ generatedFiles:
   - src/kdmistralai/utils/retries.py
   - src/kdmistralai/utils/security.py
   - src/kdmistralai/utils/serializers.py
+  - src/kdmistralai/utils/unmarshal_json_response.py
   - src/kdmistralai/utils/url.py
   - src/kdmistralai/utils/values.py
 examples:
@@ -779,7 +678,7 @@ examples:
         application/json: {}
       responses:
         "200":
-          application/json: {"id": "<id>", "object": "model", "created": 124166, "owned_by": "<value>", "workspace_id": "<id>", "root": "<value>", "root_version": "<value>", "archived": true, "capabilities": {"completion_chat": true, "completion_fim": false, "function_calling": false, "fine_tuning": false, "classification": false}, "max_context_length": 32768, "job": "c4f8ef9a-6612-4f49-88fa-a80eb8116e46", "model_type": "completion"}
+          application/json: {"id": "<id>", "object": "model", "created": 124166, "owned_by": "<value>", "root": "<value>", "archived": true, "capabilities": {"completion_chat": true, "completion_fim": false, "function_calling": false, "fine_tuning": false, "classification": false}, "max_context_length": 32768, "job": "c4f8ef9a-6612-4f49-88fa-a80eb8116e46", "model_type": "completion"}
   jobs_api_routes_fine_tuning_archive_fine_tuned_model:
     speakeasy-default-jobs-api-routes-fine-tuning-archive-fine-tuned-model:
       parameters:
@@ -845,7 +744,7 @@ examples:
           conversation_id: "<id>"
       responses:
         "200":
-          application/json: {"object": "conversation.history", "conversation_id": "<id>", "entries": [{"object": "entry", "type": "tool.execution", "name": "image_generation", "arguments": "<value>"}]}
+          application/json: {"object": "conversation.history", "conversation_id": "<id>", "entries": [{"object": "entry", "type": "tool.execution", "name": "image_generation"}]}
         "422":
           application/json: {}
   agents_api_v1_conversations_messages:
@@ -893,7 +792,7 @@ examples:
         path:
           conversation_id: "<id>"
       requestBody:
-        application/json: {"inputs": [{"object": "entry", "type": "message.input", "role": "assistant", "content": "<value>", "prefix": false}], "stream": true, "store": true, "handoff_execution": "server", "from_entry_id": "<id>"}
+        application/json: {"inputs": [{"object": "entry", "type": "function.call", "tool_call_id": "<id>", "name": "<value>", "arguments": {"key": "<value>"}}], "stream": true, "store": true, "handoff_execution": "server", "from_entry_id": "<id>"}
       responses:
         "422":
           application/json: {}
@@ -1055,10 +954,10 @@ examples:
   jobs_api_routes_batch_create_batch_job:
     speakeasy-default-jobs-api-routes-batch-create-batch-job:
       requestBody:
-        application/json: {"input_files": ["fe3343a2-3b8d-404b-ba32-a78dede2614a"], "endpoint": "/v1/moderations", "timeout_hours": 24}
+        application/json: {"input_files": ["fe3343a2-3b8d-404b-ba32-a78dede2614a"], "endpoint": "/v1/moderations", "model": "Colorado", "timeout_hours": 24}
       responses:
         "200":
-          application/json: {"id": "<id>", "object": "batch", "input_files": ["7b2553d8-e17f-4df5-a862-a1678f6b5271", "8c618d9f-7d82-42ba-a284-d57d84f50a58", "c042f996-e842-441d-ae47-4e0850334e41"], "endpoint": "<value>", "errors": [{"message": "<value>", "count": 1}], "status": "SUCCESS", "created_at": 395527, "total_requests": 166919, "completed_requests": 258552, "succeeded_requests": 480980, "failed_requests": 684176}
+          application/json: {"id": "<id>", "object": "batch", "input_files": ["7b2553d8-e17f-4df5-a862-a1678f6b5271", "8c618d9f-7d82-42ba-a284-d57d84f50a58", "c042f996-e842-441d-ae47-4e0850334e41"], "endpoint": "<value>", "model": "XC90", "errors": [{"message": "<value>", "count": 1}], "status": "SUCCESS", "created_at": 395527, "total_requests": 166919, "completed_requests": 258552, "succeeded_requests": 480980, "failed_requests": 684176}
   jobs_api_routes_batch_get_batch_job:
     speakeasy-default-jobs-api-routes-batch-get-batch-job:
       parameters:
@@ -1066,7 +965,7 @@ examples:
           job_id: "4017dc9f-b629-42f4-9700-8c681b9e7f0f"
       responses:
         "200":
-          application/json: {"id": "<id>", "object": "batch", "input_files": ["11b83f16-f2f9-4de4-a81f-203fff419c99"], "endpoint": "<value>", "errors": [], "status": "TIMEOUT_EXCEEDED", "created_at": 900958, "total_requests": 458292, "completed_requests": 184893, "succeeded_requests": 104800, "failed_requests": 836210}
+          application/json: {"id": "<id>", "object": "batch", "input_files": ["11b83f16-f2f9-4de4-a81f-203fff419c99"], "endpoint": "<value>", "model": "Civic", "errors": [], "status": "TIMEOUT_EXCEEDED", "created_at": 900958, "total_requests": 458292, "completed_requests": 184893, "succeeded_requests": 104800, "failed_requests": 836210}
   jobs_api_routes_batch_cancel_batch_job:
     speakeasy-default-jobs-api-routes-batch-cancel-batch-job:
       parameters:
@@ -1074,14 +973,14 @@ examples:
           job_id: "4fb29d1c-535b-4f0a-a1cb-2167f86da569"
       responses:
         "200":
-          application/json: {"id": "<id>", "object": "batch", "input_files": ["8fd9d88a-66be-43fd-a816-ba509ca3ca85"], "endpoint": "<value>", "errors": [], "status": "TIMEOUT_EXCEEDED", "created_at": 608251, "total_requests": 12693, "completed_requests": 203340, "succeeded_requests": 189291, "failed_requests": 969057}
+          application/json: {"id": "<id>", "object": "batch", "input_files": ["8fd9d88a-66be-43fd-a816-ba509ca3ca85"], "endpoint": "<value>", "model": "Charger", "errors": [], "status": "TIMEOUT_EXCEEDED", "created_at": 608251, "total_requests": 12693, "completed_requests": 203340, "succeeded_requests": 189291, "failed_requests": 969057}
   chat_completion_v1_chat_completions_post:
     speakeasy-default-chat-completion-v1-chat-completions-post:
       requestBody:
         application/json: {"model": "mistral-small-latest", "stream": false, "messages": [{"content": "Who is the best French painter? Answer in one short sentence.", "role": "user"}]}
       responses:
         "200":
-          application/json: {"id": "cmpl-e5cc70bb28c444948073e77776eb30ef", "object": "chat.completion", "model": "mistral-small-latest", "usage": {"prompt_tokens": 0, "completion_tokens": 0, "total_tokens": 0}, "created": 1702256327, "choices": []}
+          application/json: {"id": "cmpl-e5cc70bb28c444948073e77776eb30ef", "object": "chat.completion", "model": "mistral-small-latest", "usage": {"prompt_tokens": 16, "completion_tokens": 34, "total_tokens": 50}, "created": 1702256327, "choices": []}
         "422":
           application/json: {}
   stream_chat:
@@ -1097,7 +996,7 @@ examples:
         application/json: {"model": "codestral-2405", "top_p": 1, "stream": false, "prompt": "def", "suffix": "return a+b"}
       responses:
         "200":
-          application/json: {"id": "cmpl-e5cc70bb28c444948073e77776eb30ef", "object": "chat.completion", "model": "codestral-latest", "usage": {"prompt_tokens": 0, "completion_tokens": 0, "total_tokens": 0}, "created": 1702256327, "choices": []}
+          application/json: {"id": "cmpl-e5cc70bb28c444948073e77776eb30ef", "object": "chat.completion", "model": "codestral-latest", "usage": {"prompt_tokens": 16, "completion_tokens": 34, "total_tokens": 50}, "created": 1702256327, "choices": []}
         "422":
           application/json: {}
   stream_fim:
@@ -1113,7 +1012,7 @@ examples:
         application/json: {"stream": false, "messages": [{"content": "Who is the best French painter? Answer in one short sentence.", "role": "user"}], "agent_id": "<id>"}
       responses:
         "200":
-          application/json: {"id": "cmpl-e5cc70bb28c444948073e77776eb30ef", "object": "chat.completion", "model": "mistral-small-latest", "usage": {"prompt_tokens": 0, "completion_tokens": 0, "total_tokens": 0}, "created": 1702256327, "choices": []}
+          application/json: {"id": "cmpl-e5cc70bb28c444948073e77776eb30ef", "object": "chat.completion", "model": "mistral-small-latest", "usage": {"prompt_tokens": 16, "completion_tokens": 34, "total_tokens": 50}, "created": 1702256327, "choices": []}
         "422":
           application/json: {}
   stream_agents:
@@ -1129,7 +1028,7 @@ examples:
         application/json: {"model": "mistral-embed", "input": ["Embed this sentence.", "As well as this one."]}
       responses:
         "200":
-          application/json: {"id": "cmpl-e5cc70bb28c444948073e77776eb30ef", "object": "chat.completion", "model": "mistral-small-latest", "usage": {"prompt_tokens": 0, "completion_tokens": 0, "total_tokens": 0}, "data": [{"object": "embedding", "embedding": [0.1, 0.2, 0.3], "index": 0}, {"object": "embedding", "embedding": [0.4, 0.5, 0.6], "index": 1}]}
+          application/json: {"id": "cmpl-e5cc70bb28c444948073e77776eb30ef", "object": "chat.completion", "model": "mistral-small-latest", "usage": {"prompt_tokens": 16, "completion_tokens": 34, "total_tokens": 50}, "data": [{"object": "embedding", "embedding": [0.1, 0.2, 0.3], "index": 0}, {"object": "embedding", "embedding": [0.4, 0.5, 0.6], "index": 1}]}
         "422":
           application/json: {}
   moderations_v1_moderations_post:
@@ -1383,3 +1282,52 @@ examples:
         multipart/form-data: {"model": "Camry", "stream": true}
 examplesVersion: 1.0.2
 generatedTests: {}
+releaseNotes: |
+  ## SDK Changes Detected:
+  * kd_mistral.beta.agents.update_version(): **Changed** response.completion_args.temperature [breaking]
+  * kd_mistral.files.upload(): **Changed** response [breaking]
+  * kd_mistral.classifiers.classify_chat(): **Changed** request.inputs.[inputs].messages.[] [breaking]
+  * kd_mistral.classifiers.moderate_chat(): **Changed** request.inputs.[array].[] [breaking]
+  * kd_mistral.embeddings.create(): **Changed** response.usage [breaking]
+  * kd_mistral.agents.complete(): **Changed** request.messages.[] [breaking], **Changed** response [breaking]
+  * kd_mistral.fim.complete(): **Changed** response [breaking]
+  * kd_mistral.chat.complete(): **Changed** request.messages.[] [breaking], **Changed** response [breaking]
+  * kd_mistral.batch.jobs.cancel(): **Changed** response [breaking]
+  * kd_mistral.batch.jobs.get(): **Changed** response [breaking]
+  * kd_mistral.batch.jobs.create(): **Changed** request [breaking], **Changed** response [breaking]
+  * kd_mistral.batch.jobs.list(): **Removed** request.agent_id [breaking], **Changed** response.data.[] [breaking]
+  * kd_mistral.beta.conversations.list(): **Changed** response.[].[model_conversation].completion_args.temperature [breaking]
+  * kd_mistral.files.retrieve(): **Changed** response [breaking]
+  * kd_mistral.files.list(): **Changed** response.data.[] [breaking]
+  * kd_mistral.beta.conversations.start(): **Changed** request [breaking], **Changed** response.outputs.[] [breaking]
+  * kd_mistral.beta.agents.update(): **Changed** request.completion_args.temperature [breaking], **Changed** response.completion_args.temperature [breaking]
+  * kd_mistral.beta.conversations.get(): **Changed** response.[model_conversation].completion_args.temperature [breaking]
+  * kd_mistral.beta.agents.list(): **Changed** response.[].completion_args.temperature [breaking]
+  * kd_mistral.beta.agents.create(): **Changed** request.completion_args.temperature [breaking], **Changed** response.completion_args.temperature [breaking]
+  * kd_mistral.models.retrieve(): **Changed** response [breaking]
+  * kd_mistral.models.update(): **Changed** response [breaking]
+  * kd_mistral.beta.conversations.restart(): **Changed** request [breaking], **Changed** response.outputs.[] [breaking]
+  * kd_mistral.beta.conversations.get_messages(): **Changed** response.messages.[] [breaking]
+  * kd_mistral.beta.agents.get(): **Changed** response.completion_args.temperature [breaking]
+  * kd_mistral.beta.conversations.append(): **Changed** request [breaking], **Changed** response.outputs.[] [breaking]
+  * kd_mistral.beta.conversations.get_history(): **Changed** response.entries.[] [breaking]
+  * kd_mistral.beta.libraries.documents.text_content(): **Deleted**
+  * kd_mistral.beta.libraries.list(): **Deleted**
+  * kd_mistral.audio.transcriptions.complete(): **Deleted**
+  * kd_mistral.beta.libraries.accesses.delete(): **Deleted**
+  * kd_mistral.beta.libraries.accesses.update_or_create(): **Deleted**
+  * kd_mistral.beta.libraries.accesses.list(): **Deleted**
+  * kd_mistral.models.list(): **Added**
+  * kd_mistral.beta.libraries.documents.reprocess(): **Deleted**
+  * kd_mistral.beta.libraries.documents.status(): **Deleted**
+  * kd_mistral.beta.libraries.documents.extracted_text_signed_url(): **Deleted**
+  * kd_mistral.beta.libraries.documents.update(): **Deleted**
+  * kd_mistral.beta.libraries.documents.get_signed_url(): **Deleted**
+  * kd_mistral.beta.libraries.documents.delete(): **Deleted**
+  * kd_mistral.beta.libraries.documents.get(): **Deleted**
+  * kd_mistral.beta.libraries.documents.upload(): **Deleted**
+  * kd_mistral.beta.libraries.documents.list(): **Deleted**
+  * kd_mistral.beta.libraries.update(): **Deleted**
+  * kd_mistral.beta.libraries.delete(): **Deleted**
+  * kd_mistral.beta.libraries.get(): **Deleted**
+  * kd_mistral.beta.libraries.create(): **Deleted**

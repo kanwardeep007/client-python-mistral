@@ -5,15 +5,15 @@ This example shows how to create chat completions.
 
 ```python
 # Synchronous Example
-from kdmistralai import Mistral
+from kdmistralai import KdMistral
 import os
 
 
-with Mistral(
+with KdMistral(
     api_key=os.getenv("MISTRAL_API_KEY", ""),
-) as mistral:
+) as kd_mistral:
 
-    res = mistral.chat.complete(model="mistral-small-latest", messages=[
+    res = kd_mistral.chat.complete(model="mistral-small-latest", messages=[
         {
             "content": "Who is the best French painter? Answer in one short sentence.",
             "role": "user",
@@ -26,20 +26,20 @@ with Mistral(
 
 </br>
 
-The same SDK client can also be used to make asychronous requests by importing asyncio.
+The same SDK client can also be used to make asynchronous requests by importing asyncio.
 ```python
 # Asynchronous Example
 import asyncio
-from kdmistralai import Mistral
+from kdmistralai import KdMistral
 import os
 
 async def main():
 
-    async with Mistral(
+    async with KdMistral(
         api_key=os.getenv("MISTRAL_API_KEY", ""),
-    ) as mistral:
+    ) as kd_mistral:
 
-        res = await mistral.chat.complete_async(model="mistral-small-latest", messages=[
+        res = await kd_mistral.chat.complete_async(model="mistral-small-latest", messages=[
             {
                 "content": "Who is the best French painter? Answer in one short sentence.",
                 "role": "user",
@@ -58,15 +58,15 @@ This example shows how to upload a file.
 
 ```python
 # Synchronous Example
-from kdmistralai import Mistral
+from kdmistralai import KdMistral
 import os
 
 
-with Mistral(
+with KdMistral(
     api_key=os.getenv("MISTRAL_API_KEY", ""),
-) as mistral:
+) as kd_mistral:
 
-    res = mistral.files.upload(file={
+    res = kd_mistral.files.upload(file={
         "file_name": "example.file",
         "content": open("example.file", "rb"),
     })
@@ -77,20 +77,20 @@ with Mistral(
 
 </br>
 
-The same SDK client can also be used to make asychronous requests by importing asyncio.
+The same SDK client can also be used to make asynchronous requests by importing asyncio.
 ```python
 # Asynchronous Example
 import asyncio
-from kdmistralai import Mistral
+from kdmistralai import KdMistral
 import os
 
 async def main():
 
-    async with Mistral(
+    async with KdMistral(
         api_key=os.getenv("MISTRAL_API_KEY", ""),
-    ) as mistral:
+    ) as kd_mistral:
 
-        res = await mistral.files.upload_async(file={
+        res = await kd_mistral.files.upload_async(file={
             "file_name": "example.file",
             "content": open("example.file", "rb"),
         })
@@ -107,15 +107,15 @@ This example shows how to create agents completions.
 
 ```python
 # Synchronous Example
-from kdmistralai import Mistral
+from kdmistralai import KdMistral
 import os
 
 
-with Mistral(
+with KdMistral(
     api_key=os.getenv("MISTRAL_API_KEY", ""),
-) as mistral:
+) as kd_mistral:
 
-    res = mistral.agents.complete(messages=[
+    res = kd_mistral.agents.complete(messages=[
         {
             "content": "Who is the best French painter? Answer in one short sentence.",
             "role": "user",
@@ -128,20 +128,20 @@ with Mistral(
 
 </br>
 
-The same SDK client can also be used to make asychronous requests by importing asyncio.
+The same SDK client can also be used to make asynchronous requests by importing asyncio.
 ```python
 # Asynchronous Example
 import asyncio
-from kdmistralai import Mistral
+from kdmistralai import KdMistral
 import os
 
 async def main():
 
-    async with Mistral(
+    async with KdMistral(
         api_key=os.getenv("MISTRAL_API_KEY", ""),
-    ) as mistral:
+    ) as kd_mistral:
 
-        res = await mistral.agents.complete_async(messages=[
+        res = await kd_mistral.agents.complete_async(messages=[
             {
                 "content": "Who is the best French painter? Answer in one short sentence.",
                 "role": "user",
@@ -160,15 +160,15 @@ This example shows how to create embedding request.
 
 ```python
 # Synchronous Example
-from kdmistralai import Mistral
+from kdmistralai import KdMistral
 import os
 
 
-with Mistral(
+with KdMistral(
     api_key=os.getenv("MISTRAL_API_KEY", ""),
-) as mistral:
+) as kd_mistral:
 
-    res = mistral.embeddings.create(model="mistral-embed", inputs=[
+    res = kd_mistral.embeddings.create(model="mistral-embed", inputs=[
         "Embed this sentence.",
         "As well as this one.",
     ])
@@ -179,20 +179,20 @@ with Mistral(
 
 </br>
 
-The same SDK client can also be used to make asychronous requests by importing asyncio.
+The same SDK client can also be used to make asynchronous requests by importing asyncio.
 ```python
 # Asynchronous Example
 import asyncio
-from kdmistralai import Mistral
+from kdmistralai import KdMistral
 import os
 
 async def main():
 
-    async with Mistral(
+    async with KdMistral(
         api_key=os.getenv("MISTRAL_API_KEY", ""),
-    ) as mistral:
+    ) as kd_mistral:
 
-        res = await mistral.embeddings.create_async(model="mistral-embed", inputs=[
+        res = await kd_mistral.embeddings.create_async(model="mistral-embed", inputs=[
             "Embed this sentence.",
             "As well as this one.",
         ])

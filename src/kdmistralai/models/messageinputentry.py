@@ -20,7 +20,7 @@ from typing_extensions import NotRequired, TypeAliasType, TypedDict
 
 Object = Literal["entry"]
 
-MessageInputEntryType = Literal["message.input"]
+Type = Literal["message.input"]
 
 MessageInputEntryRole = Literal["assistant", "user"]
 
@@ -41,11 +41,10 @@ class MessageInputEntryTypedDict(TypedDict):
     role: MessageInputEntryRole
     content: MessageInputEntryContentTypedDict
     object: NotRequired[Object]
-    type: NotRequired[MessageInputEntryType]
+    type: NotRequired[Type]
     created_at: NotRequired[datetime]
     completed_at: NotRequired[Nullable[datetime]]
     id: NotRequired[str]
-    prefix: NotRequired[bool]
 
 
 class MessageInputEntry(BaseModel):
@@ -57,7 +56,7 @@ class MessageInputEntry(BaseModel):
 
     object: Optional[Object] = "entry"
 
-    type: Optional[MessageInputEntryType] = "message.input"
+    type: Optional[Type] = "message.input"
 
     created_at: Optional[datetime] = None
 
@@ -65,18 +64,9 @@ class MessageInputEntry(BaseModel):
 
     id: Optional[str] = None
 
-    prefix: Optional[bool] = False
-
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = [
-            "object",
-            "type",
-            "created_at",
-            "completed_at",
-            "id",
-            "prefix",
-        ]
+        optional_fields = ["object", "type", "created_at", "completed_at", "id"]
         nullable_fields = ["completed_at"]
         null_default_fields = []
 

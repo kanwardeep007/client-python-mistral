@@ -18,16 +18,17 @@ Moderations
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="moderations_v1_moderations_post" method="post" path="/v1/moderations" -->
 ```python
-from kdmistralai import Mistral
+from kdmistralai import KdMistral
 import os
 
 
-with Mistral(
+with KdMistral(
     api_key=os.getenv("MISTRAL_API_KEY", ""),
-) as mistral:
+) as kd_mistral:
 
-    res = mistral.classifiers.moderate(model="Durango", inputs=[
+    res = kd_mistral.classifiers.moderate(model="Durango", inputs=[
         "<value 1>",
         "<value 2>",
     ])
@@ -62,16 +63,17 @@ Chat Moderations
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="chat_moderations_v1_chat_moderations_post" method="post" path="/v1/chat/moderations" -->
 ```python
-from kdmistralai import Mistral
+from kdmistralai import KdMistral
 import os
 
 
-with Mistral(
+with KdMistral(
     api_key=os.getenv("MISTRAL_API_KEY", ""),
-) as mistral:
+) as kd_mistral:
 
-    res = mistral.classifiers.moderate_chat(inputs=[
+    res = kd_mistral.classifiers.moderate_chat(inputs=[
         {
             "content": "<value>",
             "role": "tool",
@@ -108,16 +110,17 @@ Classifications
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="classifications_v1_classifications_post" method="post" path="/v1/classifications" -->
 ```python
-from kdmistralai import Mistral
+from kdmistralai import KdMistral
 import os
 
 
-with Mistral(
+with KdMistral(
     api_key=os.getenv("MISTRAL_API_KEY", ""),
-) as mistral:
+) as kd_mistral:
 
-    res = mistral.classifiers.classify(model="Silverado", inputs=[
+    res = kd_mistral.classifiers.classify(model="Silverado", inputs=[
         "<value 1>",
     ])
 
@@ -151,16 +154,17 @@ Chat Classifications
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="chat_classifications_v1_chat_classifications_post" method="post" path="/v1/chat/classifications" -->
 ```python
-from kdmistralai import Mistral
+from kdmistralai import KdMistral
 import os
 
 
-with Mistral(
+with KdMistral(
     api_key=os.getenv("MISTRAL_API_KEY", ""),
-) as mistral:
+) as kd_mistral:
 
-    res = mistral.classifiers.classify_chat(model="Camry", inputs=[
+    res = kd_mistral.classifiers.classify_chat(model="Camry", inputs=[
         {
             "messages": [
                 {

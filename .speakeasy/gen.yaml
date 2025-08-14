@@ -51,8 +51,9 @@ python:
   inputModelSuffix: input
   maxMethodParams: 15
   methodArguments: infer-optional-args
-  moduleName: "kdmistralai"
+  moduleName: kdmistralai
   outputModelSuffix: output
+  packageManager: poetry
   packageName: kdmistralai
   pytestFilterWarnings: []
   pytestTimeout: 0

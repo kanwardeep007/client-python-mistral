@@ -2,11 +2,11 @@
 
 from .basesdk import BaseSDK
 from .sdkconfiguration import SDKConfiguration
-from kdmistralai.mistral_jobs import MistralJobs
+from kdmistralai.kdmistral_jobs import KdMistralJobs
 
 
 class Batch(BaseSDK):
-    jobs: MistralJobs
+    jobs: KdMistralJobs
 
     def __init__(self, sdk_config: SDKConfiguration) -> None:
         BaseSDK.__init__(self, sdk_config)
@@ -14,4 +14,4 @@ class Batch(BaseSDK):
         self._init_sdks()
 
     def _init_sdks(self):
-        self.jobs = MistralJobs(self.sdk_configuration)
+        self.jobs = KdMistralJobs(self.sdk_configuration)

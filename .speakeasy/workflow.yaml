@@ -10,6 +10,8 @@ sources:
     mistral-openapi:
         inputs:
             - location: ./mistral-openapi-main-old.yaml
+        registry:
+            location: registry.speakeasyapi.dev/speakeasy-self/speakeasy-self/mistral-openapi
 targets:
     mistralai-azure-sdk:
         target: python

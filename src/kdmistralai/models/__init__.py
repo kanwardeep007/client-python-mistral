@@ -2,6 +2,7 @@
 
 from typing import TYPE_CHECKING
 from importlib import import_module
+import builtins
 
 if TYPE_CHECKING:
     from .agent import (
@@ -129,16 +130,7 @@ if TYPE_CHECKING:
         AssistantMessageRole,
         AssistantMessageTypedDict,
     )
-    from .audiolanguagechunk import AudioLanguageChunk, AudioLanguageChunkTypedDict
-    from .audiotranscriptionrequest import (
-        AudioTranscriptionRequest,
-        AudioTranscriptionRequestTypedDict,
-    )
-    from .audiotranscriptionrequeststream import (
-        AudioTranscriptionRequestStream,
-        AudioTranscriptionRequestStreamTypedDict,
-    )
-    from .basemodelcard import BaseModelCard, BaseModelCardTypedDict, Type
+    from .basemodelcard import BaseModelCard, BaseModelCardTypedDict
     from .batcherror import BatchError, BatchErrorTypedDict
     from .batchjobin import BatchJobIn, BatchJobInTypedDict
     from .batchjobout import BatchJobOut, BatchJobOutObject, BatchJobOutTypedDict
@@ -369,9 +361,6 @@ if TYPE_CHECKING:
         DocumentLibraryToolType,
         DocumentLibraryToolTypedDict,
     )
-    from .documentout import DocumentOut, DocumentOutTypedDict
-    from .documenttextcontent import DocumentTextContent, DocumentTextContentTypedDict
-    from .documentupdatein import DocumentUpdateIn, DocumentUpdateInTypedDict
     from .documenturlchunk import (
         DocumentURLChunk,
         DocumentURLChunkType,
@@ -389,9 +378,7 @@ if TYPE_CHECKING:
         EmbeddingResponseData,
         EmbeddingResponseDataTypedDict,
     )
-    from .entitytype import EntityType
     from .eventout import EventOut, EventOutTypedDict
-    from .file import File, FileTypedDict
     from .filechunk import FileChunk, FileChunkTypedDict
     from .filepurpose import FilePurpose
     from .files_api_routes_delete_fileop import (
@@ -415,6 +402,8 @@ if TYPE_CHECKING:
         FilesAPIRoutesRetrieveFileRequestTypedDict,
     )
     from .files_api_routes_upload_fileop import (
+        File,
+        FileTypedDict,
         FilesAPIRoutesUploadFileMultiPartBodyParams,
         FilesAPIRoutesUploadFileMultiPartBodyParamsTypedDict,
     )
@@ -442,7 +431,7 @@ if TYPE_CHECKING:
         FTModelCapabilitiesOut,
         FTModelCapabilitiesOutTypedDict,
     )
-    from .ftmodelcard import FTModelCard, FTModelCardType, FTModelCardTypedDict
+    from .ftmodelcard import FTModelCard, FTModelCardTypedDict
     from .function import Function, FunctionTypedDict
     from .functioncall import (
         Arguments,
@@ -578,86 +567,20 @@ if TYPE_CHECKING:
         JobsAPIRoutesFineTuningUpdateFineTunedModelResponse,
         JobsAPIRoutesFineTuningUpdateFineTunedModelResponseTypedDict,
     )
-    from .jobsout import Data, DataTypedDict, JobsOut, JobsOutObject, JobsOutTypedDict
+    from .jobsout import (
+        JobsOut,
+        JobsOutData,
+        JobsOutDataTypedDict,
+        JobsOutObject,
+        JobsOutTypedDict,
+    )
     from .jsonschema import JSONSchema, JSONSchemaTypedDict
     from .legacyjobmetadataout import (
         LegacyJobMetadataOut,
         LegacyJobMetadataOutObject,
         LegacyJobMetadataOutTypedDict,
     )
-    from .libraries_delete_v1op import (
-        LibrariesDeleteV1Request,
-        LibrariesDeleteV1RequestTypedDict,
-    )
-    from .libraries_documents_delete_v1op import (
-        LibrariesDocumentsDeleteV1Request,
-        LibrariesDocumentsDeleteV1RequestTypedDict,
-    )
-    from .libraries_documents_get_extracted_text_signed_url_v1op import (
-        LibrariesDocumentsGetExtractedTextSignedURLV1Request,
-        LibrariesDocumentsGetExtractedTextSignedURLV1RequestTypedDict,
-    )
-    from .libraries_documents_get_signed_url_v1op import (
-        LibrariesDocumentsGetSignedURLV1Request,
-        LibrariesDocumentsGetSignedURLV1RequestTypedDict,
-    )
-    from .libraries_documents_get_status_v1op import (
-        LibrariesDocumentsGetStatusV1Request,
-        LibrariesDocumentsGetStatusV1RequestTypedDict,
-    )
-    from .libraries_documents_get_text_content_v1op import (
-        LibrariesDocumentsGetTextContentV1Request,
-        LibrariesDocumentsGetTextContentV1RequestTypedDict,
-    )
-    from .libraries_documents_get_v1op import (
-        LibrariesDocumentsGetV1Request,
-        LibrariesDocumentsGetV1RequestTypedDict,
-    )
-    from .libraries_documents_list_v1op import (
-        LibrariesDocumentsListV1Request,
-        LibrariesDocumentsListV1RequestTypedDict,
-    )
-    from .libraries_documents_reprocess_v1op import (
-        LibrariesDocumentsReprocessV1Request,
-        LibrariesDocumentsReprocessV1RequestTypedDict,
-    )
-    from .libraries_documents_update_v1op import (
-        LibrariesDocumentsUpdateV1Request,
-        LibrariesDocumentsUpdateV1RequestTypedDict,
-    )
-    from .libraries_documents_upload_v1op import (
-        LibrariesDocumentsUploadV1DocumentUpload,
-        LibrariesDocumentsUploadV1DocumentUploadTypedDict,
-        LibrariesDocumentsUploadV1Request,
-        LibrariesDocumentsUploadV1RequestTypedDict,
-    )
-    from .libraries_get_v1op import (
-        LibrariesGetV1Request,
-        LibrariesGetV1RequestTypedDict,
-    )
-    from .libraries_share_create_v1op import (
-        LibrariesShareCreateV1Request,
-        LibrariesShareCreateV1RequestTypedDict,
-    )
-    from .libraries_share_delete_v1op import (
-        LibrariesShareDeleteV1Request,
-        LibrariesShareDeleteV1RequestTypedDict,
-    )
-    from .libraries_share_list_v1op import (
-        LibrariesShareListV1Request,
-        LibrariesShareListV1RequestTypedDict,
-    )
-    from .libraries_update_v1op import (
-        LibrariesUpdateV1Request,
-        LibrariesUpdateV1RequestTypedDict,
-    )
-    from .libraryin import LibraryIn, LibraryInTypedDict
-    from .libraryinupdate import LibraryInUpdate, LibraryInUpdateTypedDict
-    from .libraryout import LibraryOut, LibraryOutTypedDict
-    from .listdocumentout import ListDocumentOut, ListDocumentOutTypedDict
     from .listfilesout import ListFilesOut, ListFilesOutTypedDict
-    from .listlibraryout import ListLibraryOut, ListLibraryOutTypedDict
-    from .listsharingout import ListSharingOut, ListSharingOutTypedDict
     from .messageentries import MessageEntries, MessageEntriesTypedDict
     from .messageinputcontentchunks import (
         MessageInputContentChunks,
@@ -668,9 +591,9 @@ if TYPE_CHECKING:
         MessageInputEntryContent,
         MessageInputEntryContentTypedDict,
         MessageInputEntryRole,
-        MessageInputEntryType,
         MessageInputEntryTypedDict,
         Object,
+        Type,
     )
     from .messageoutputcontentchunks import (
         MessageOutputContentChunks,
@@ -694,6 +617,7 @@ if TYPE_CHECKING:
         MessageOutputEventTypedDict,
     )
     from .metricout import MetricOut, MetricOutTypedDict
+    from .mistralerror import MistralError
     from .mistralpromptmode import MistralPromptMode
     from .modelcapabilities import ModelCapabilities, ModelCapabilitiesTypedDict
     from .modelconversation import (
@@ -703,8 +627,10 @@ if TYPE_CHECKING:
         ModelConversationToolsTypedDict,
         ModelConversationTypedDict,
     )
+    from .modellist import Data, DataTypedDict, ModelList, ModelListTypedDict
     from .moderationobject import ModerationObject, ModerationObjectTypedDict
     from .moderationresponse import ModerationResponse, ModerationResponseTypedDict
+    from .no_response_error import NoResponseError
     from .ocrimageobject import OCRImageObject, OCRImageObjectTypedDict
     from .ocrpagedimensions import OCRPageDimensions, OCRPageDimensionsTypedDict
     from .ocrpageobject import OCRPageObject, OCRPageObjectTypedDict
@@ -712,9 +638,7 @@ if TYPE_CHECKING:
     from .ocrresponse import OCRResponse, OCRResponseTypedDict
     from .ocrusageinfo import OCRUsageInfo, OCRUsageInfoTypedDict
     from .outputcontentchunks import OutputContentChunks, OutputContentChunksTypedDict
-    from .paginationinfo import PaginationInfo, PaginationInfoTypedDict
     from .prediction import Prediction, PredictionTypedDict
-    from .processingstatusout import ProcessingStatusOut, ProcessingStatusOutTypedDict
     from .referencechunk import (
         ReferenceChunk,
         ReferenceChunkType,
@@ -737,6 +661,7 @@ if TYPE_CHECKING:
         ResponseStartedEventType,
         ResponseStartedEventTypedDict,
     )
+    from .responsevalidationerror import ResponseValidationError
     from .retrieve_model_v1_models_model_id_getop import (
         RetrieveModelV1ModelsModelIDGetRequest,
         RetrieveModelV1ModelsModelIDGetRequestTypedDict,
@@ -747,10 +672,6 @@ if TYPE_CHECKING:
     from .sampletype import SampleType
     from .sdkerror import SDKError
     from .security import Security, SecurityTypedDict
-    from .shareenum import ShareEnum
-    from .sharingdelete import SharingDelete, SharingDeleteTypedDict
-    from .sharingin import SharingIn, SharingInTypedDict
-    from .sharingout import SharingOut, SharingOutTypedDict
     from .source import Source
     from .ssetypes import SSETypes
     from .systemmessage import (
@@ -761,23 +682,10 @@ if TYPE_CHECKING:
         SystemMessageTypedDict,
     )
     from .textchunk import TextChunk, TextChunkType, TextChunkTypedDict
-    from .thinkchunk import (
-        ThinkChunk,
-        ThinkChunkType,
-        ThinkChunkTypedDict,
-        Thinking,
-        ThinkingTypedDict,
-    )
-    from .timestampgranularity import TimestampGranularity
     from .tool import Tool, ToolTypedDict
-    from .toolcall import Metadata, MetadataTypedDict, ToolCall, ToolCallTypedDict
+    from .toolcall import ToolCall, ToolCallTypedDict
     from .toolchoice import ToolChoice, ToolChoiceTypedDict
     from .toolchoiceenum import ToolChoiceEnum
-    from .toolexecutiondeltaevent import (
-        ToolExecutionDeltaEvent,
-        ToolExecutionDeltaEventType,
-        ToolExecutionDeltaEventTypedDict,
-    )
     from .toolexecutiondoneevent import (
         ToolExecutionDoneEvent,
         ToolExecutionDoneEventType,
@@ -809,34 +717,6 @@ if TYPE_CHECKING:
     )
     from .tooltypes import ToolTypes
     from .trainingfile import TrainingFile, TrainingFileTypedDict
-    from .transcriptionresponse import (
-        TranscriptionResponse,
-        TranscriptionResponseTypedDict,
-    )
-    from .transcriptionsegmentchunk import (
-        TranscriptionSegmentChunk,
-        TranscriptionSegmentChunkTypedDict,
-    )
-    from .transcriptionstreamdone import (
-        TranscriptionStreamDone,
-        TranscriptionStreamDoneTypedDict,
-    )
-    from .transcriptionstreamevents import (
-        TranscriptionStreamEvents,
-        TranscriptionStreamEventsTypedDict,
-    )
-    from .transcriptionstreamlanguage import (
-        TranscriptionStreamLanguage,
-        TranscriptionStreamLanguageTypedDict,
-    )
-    from .transcriptionstreamsegmentdelta import (
-        TranscriptionStreamSegmentDelta,
-        TranscriptionStreamSegmentDeltaTypedDict,
-    )
-    from .transcriptionstreamtextdelta import (
-        TranscriptionStreamTextDelta,
-        TranscriptionStreamTextDeltaTypedDict,
-    )
     from .unarchiveftmodelout import (
         UnarchiveFTModelOut,
         UnarchiveFTModelOutObject,
@@ -955,12 +835,6 @@ __all__ = [
     "AssistantMessageContentTypedDict",
     "AssistantMessageRole",
     "AssistantMessageTypedDict",
-    "AudioLanguageChunk",
-    "AudioLanguageChunkTypedDict",
-    "AudioTranscriptionRequest",
-    "AudioTranscriptionRequestStream",
-    "AudioTranscriptionRequestStreamTypedDict",
-    "AudioTranscriptionRequestTypedDict",
     "BaseModelCard",
     "BaseModelCardTypedDict",
     "BatchError",
@@ -1120,16 +994,10 @@ __all__ = [
     "DocumentLibraryTool",
     "DocumentLibraryToolType",
     "DocumentLibraryToolTypedDict",
-    "DocumentOut",
-    "DocumentOutTypedDict",
-    "DocumentTextContent",
-    "DocumentTextContentTypedDict",
     "DocumentTypedDict",
     "DocumentURLChunk",
     "DocumentURLChunkType",
     "DocumentURLChunkTypedDict",
-    "DocumentUpdateIn",
-    "DocumentUpdateInTypedDict",
     "EmbeddingDtype",
     "EmbeddingRequest",
     "EmbeddingRequestInputs",
@@ -1139,7 +1007,6 @@ __all__ = [
     "EmbeddingResponseData",
     "EmbeddingResponseDataTypedDict",
     "EmbeddingResponseTypedDict",
-    "EntityType",
     "Entries",
     "EntriesTypedDict",
     "EventOut",
@@ -1158,7 +1025,6 @@ __all__ = [
     "FTModelCapabilitiesOut",
     "FTModelCapabilitiesOutTypedDict",
     "FTModelCard",
-    "FTModelCardType",
     "FTModelCardTypedDict",
     "File",
     "FileChunk",
@@ -1282,59 +1148,15 @@ __all__ = [
     "JobsAPIRoutesFineTuningUpdateFineTunedModelResponse",
     "JobsAPIRoutesFineTuningUpdateFineTunedModelResponseTypedDict",
     "JobsOut",
+    "JobsOutData",
+    "JobsOutDataTypedDict",
     "JobsOutObject",
     "JobsOutTypedDict",
     "LegacyJobMetadataOut",
     "LegacyJobMetadataOutObject",
     "LegacyJobMetadataOutTypedDict",
-    "LibrariesDeleteV1Request",
-    "LibrariesDeleteV1RequestTypedDict",
-    "LibrariesDocumentsDeleteV1Request",
-    "LibrariesDocumentsDeleteV1RequestTypedDict",
-    "LibrariesDocumentsGetExtractedTextSignedURLV1Request",
-    "LibrariesDocumentsGetExtractedTextSignedURLV1RequestTypedDict",
-    "LibrariesDocumentsGetSignedURLV1Request",
-    "LibrariesDocumentsGetSignedURLV1RequestTypedDict",
-    "LibrariesDocumentsGetStatusV1Request",
-    "LibrariesDocumentsGetStatusV1RequestTypedDict",
-    "LibrariesDocumentsGetTextContentV1Request",
-    "LibrariesDocumentsGetTextContentV1RequestTypedDict",
-    "LibrariesDocumentsGetV1Request",
-    "LibrariesDocumentsGetV1RequestTypedDict",
-    "LibrariesDocumentsListV1Request",
-    "LibrariesDocumentsListV1RequestTypedDict",
-    "LibrariesDocumentsReprocessV1Request",
-    "LibrariesDocumentsReprocessV1RequestTypedDict",
-    "LibrariesDocumentsUpdateV1Request",
-    "LibrariesDocumentsUpdateV1RequestTypedDict",
-    "LibrariesDocumentsUploadV1DocumentUpload",
-    "LibrariesDocumentsUploadV1DocumentUploadTypedDict",
-    "LibrariesDocumentsUploadV1Request",
-    "LibrariesDocumentsUploadV1RequestTypedDict",
-    "LibrariesGetV1Request",
-    "LibrariesGetV1RequestTypedDict",
-    "LibrariesShareCreateV1Request",
-    "LibrariesShareCreateV1RequestTypedDict",
-    "LibrariesShareDeleteV1Request",
-    "LibrariesShareDeleteV1RequestTypedDict",
-    "LibrariesShareListV1Request",
-    "LibrariesShareListV1RequestTypedDict",
-    "LibrariesUpdateV1Request",
-    "LibrariesUpdateV1RequestTypedDict",
-    "LibraryIn",
-    "LibraryInTypedDict",
-    "LibraryInUpdate",
-    "LibraryInUpdateTypedDict",
-    "LibraryOut",
-    "LibraryOutTypedDict",
-    "ListDocumentOut",
-    "ListDocumentOutTypedDict",
     "ListFilesOut",
     "ListFilesOutTypedDict",
-    "ListLibraryOut",
-    "ListLibraryOutTypedDict",
-    "ListSharingOut",
-    "ListSharingOutTypedDict",
     "Loc",
     "LocTypedDict",
     "MessageEntries",
@@ -1345,7 +1167,6 @@ __all__ = [
     "MessageInputEntryContent",
     "MessageInputEntryContentTypedDict",
     "MessageInputEntryRole",
-    "MessageInputEntryType",
     "MessageInputEntryTypedDict",
     "MessageOutputContentChunks",
     "MessageOutputContentChunksTypedDict",
@@ -1364,10 +1185,9 @@ __all__ = [
     "MessageOutputEventTypedDict",
     "Messages",
     "MessagesTypedDict",
-    "Metadata",
-    "MetadataTypedDict",
     "MetricOut",
     "MetricOutTypedDict",
+    "MistralError",
     "MistralPromptMode",
     "ModelCapabilities",
     "ModelCapabilitiesTypedDict",
@@ -1376,11 +1196,14 @@ __all__ = [
     "ModelConversationTools",
     "ModelConversationToolsTypedDict",
     "ModelConversationTypedDict",
+    "ModelList",
+    "ModelListTypedDict",
     "ModelType",
     "ModerationObject",
     "ModerationObjectTypedDict",
     "ModerationResponse",
     "ModerationResponseTypedDict",
+    "NoResponseError",
     "OCRImageObject",
     "OCRImageObjectTypedDict",
     "OCRPageDimensions",
@@ -1400,12 +1223,8 @@ __all__ = [
     "OutputContentChunksTypedDict",
     "Outputs",
     "OutputsTypedDict",
-    "PaginationInfo",
-    "PaginationInfoTypedDict",
     "Prediction",
     "PredictionTypedDict",
-    "ProcessingStatusOut",
-    "ProcessingStatusOutTypedDict",
     "QueryParamStatus",
     "ReferenceChunk",
     "ReferenceChunkType",
@@ -1428,6 +1247,7 @@ __all__ = [
     "ResponseStartedEvent",
     "ResponseStartedEventType",
     "ResponseStartedEventTypedDict",
+    "ResponseValidationError",
     "RetrieveFileOut",
     "RetrieveFileOutTypedDict",
     "RetrieveModelV1ModelsModelIDGetRequest",
@@ -1440,13 +1260,6 @@ __all__ = [
     "SampleType",
     "Security",
     "SecurityTypedDict",
-    "ShareEnum",
-    "SharingDelete",
-    "SharingDeleteTypedDict",
-    "SharingIn",
-    "SharingInTypedDict",
-    "SharingOut",
-    "SharingOutTypedDict",
     "Source",
     "Status",
     "Stop",
@@ -1458,21 +1271,12 @@ __all__ = [
     "TextChunk",
     "TextChunkType",
     "TextChunkTypedDict",
-    "ThinkChunk",
-    "ThinkChunkType",
-    "ThinkChunkTypedDict",
-    "Thinking",
-    "ThinkingTypedDict",
-    "TimestampGranularity",
     "Tool",
     "ToolCall",
     "ToolCallTypedDict",
     "ToolChoice",
     "ToolChoiceEnum",
     "ToolChoiceTypedDict",
-    "ToolExecutionDeltaEvent",
-    "ToolExecutionDeltaEventType",
-    "ToolExecutionDeltaEventTypedDict",
     "ToolExecutionDoneEvent",
     "ToolExecutionDoneEventType",
     "ToolExecutionDoneEventTypedDict",
@@ -1500,20 +1304,6 @@ __all__ = [
     "ToolsTypedDict",
     "TrainingFile",
     "TrainingFileTypedDict",
-    "TranscriptionResponse",
-    "TranscriptionResponseTypedDict",
-    "TranscriptionSegmentChunk",
-    "TranscriptionSegmentChunkTypedDict",
-    "TranscriptionStreamDone",
-    "TranscriptionStreamDoneTypedDict",
-    "TranscriptionStreamEvents",
-    "TranscriptionStreamEventsTypedDict",
-    "TranscriptionStreamLanguage",
-    "TranscriptionStreamLanguageTypedDict",
-    "TranscriptionStreamSegmentDelta",
-    "TranscriptionStreamSegmentDeltaTypedDict",
-    "TranscriptionStreamTextDelta",
-    "TranscriptionStreamTextDeltaTypedDict",
     "Two",
     "TwoTypedDict",
     "Type",
@@ -1627,15 +1417,8 @@ _dynamic_imports: dict[str, str] = {
     "AssistantMessageContentTypedDict": ".assistantmessage",
     "AssistantMessageRole": ".assistantmessage",
     "AssistantMessageTypedDict": ".assistantmessage",
-    "AudioLanguageChunk": ".audiolanguagechunk",
-    "AudioLanguageChunkTypedDict": ".audiolanguagechunk",
-    "AudioTranscriptionRequest": ".audiotranscriptionrequest",
-    "AudioTranscriptionRequestTypedDict": ".audiotranscriptionrequest",
-    "AudioTranscriptionRequestStream": ".audiotranscriptionrequeststream",
-    "AudioTranscriptionRequestStreamTypedDict": ".audiotranscriptionrequeststream",
     "BaseModelCard": ".basemodelcard",
     "BaseModelCardTypedDict": ".basemodelcard",
-    "Type": ".basemodelcard",
     "BatchError": ".batcherror",
     "BatchErrorTypedDict": ".batcherror",
     "BatchJobIn": ".batchjobin",
@@ -1813,12 +1596,6 @@ _dynamic_imports: dict[str, str] = {
     "DocumentLibraryTool": ".documentlibrarytool",
     "DocumentLibraryToolType": ".documentlibrarytool",
     "DocumentLibraryToolTypedDict": ".documentlibrarytool",
-    "DocumentOut": ".documentout",
-    "DocumentOutTypedDict": ".documentout",
-    "DocumentTextContent": ".documenttextcontent",
-    "DocumentTextContentTypedDict": ".documenttextcontent",
-    "DocumentUpdateIn": ".documentupdatein",
-    "DocumentUpdateInTypedDict": ".documentupdatein",
     "DocumentURLChunk": ".documenturlchunk",
     "DocumentURLChunkType": ".documenturlchunk",
     "DocumentURLChunkTypedDict": ".documenturlchunk",
@@ -1831,11 +1608,8 @@ _dynamic_imports: dict[str, str] = {
     "EmbeddingResponseTypedDict": ".embeddingresponse",
     "EmbeddingResponseData": ".embeddingresponsedata",
     "EmbeddingResponseDataTypedDict": ".embeddingresponsedata",
-    "EntityType": ".entitytype",
     "EventOut": ".eventout",
     "EventOutTypedDict": ".eventout",
-    "File": ".file",
-    "FileTypedDict": ".file",
     "FileChunk": ".filechunk",
     "FileChunkTypedDict": ".filechunk",
     "FilePurpose": ".filepurpose",
@@ -1849,6 +1623,8 @@ _dynamic_imports: dict[str, str] = {
     "FilesAPIRoutesListFilesRequestTypedDict": ".files_api_routes_list_filesop",
     "FilesAPIRoutesRetrieveFileRequest": ".files_api_routes_retrieve_fileop",
     "FilesAPIRoutesRetrieveFileRequestTypedDict": ".files_api_routes_retrieve_fileop",
+    "File": ".files_api_routes_upload_fileop",
+    "FileTypedDict": ".files_api_routes_upload_fileop",
     "FilesAPIRoutesUploadFileMultiPartBodyParams": ".files_api_routes_upload_fileop",
     "FilesAPIRoutesUploadFileMultiPartBodyParamsTypedDict": ".files_api_routes_upload_fileop",
     "FileSchema": ".fileschema",
@@ -1870,7 +1646,6 @@ _dynamic_imports: dict[str, str] = {
     "FTModelCapabilitiesOut": ".ftmodelcapabilitiesout",
     "FTModelCapabilitiesOutTypedDict": ".ftmodelcapabilitiesout",
     "FTModelCard": ".ftmodelcard",
-    "FTModelCardType": ".ftmodelcard",
     "FTModelCardTypedDict": ".ftmodelcard",
     "Function": ".function",
     "FunctionTypedDict": ".function",
@@ -1969,9 +1744,9 @@ _dynamic_imports: dict[str, str] = {
     "JobsAPIRoutesFineTuningUpdateFineTunedModelRequestTypedDict": ".jobs_api_routes_fine_tuning_update_fine_tuned_modelop",
     "JobsAPIRoutesFineTuningUpdateFineTunedModelResponse": ".jobs_api_routes_fine_tuning_update_fine_tuned_modelop",
     "JobsAPIRoutesFineTuningUpdateFineTunedModelResponseTypedDict": ".jobs_api_routes_fine_tuning_update_fine_tuned_modelop",
-    "Data": ".jobsout",
-    "DataTypedDict": ".jobsout",
     "JobsOut": ".jobsout",
+    "JobsOutData": ".jobsout",
+    "JobsOutDataTypedDict": ".jobsout",
     "JobsOutObject": ".jobsout",
     "JobsOutTypedDict": ".jobsout",
     "JSONSchema": ".jsonschema",
@@ -1979,54 +1754,8 @@ _dynamic_imports: dict[str, str] = {
     "LegacyJobMetadataOut": ".legacyjobmetadataout",
     "LegacyJobMetadataOutObject": ".legacyjobmetadataout",
     "LegacyJobMetadataOutTypedDict": ".legacyjobmetadataout",
-    "LibrariesDeleteV1Request": ".libraries_delete_v1op",
-    "LibrariesDeleteV1RequestTypedDict": ".libraries_delete_v1op",
-    "LibrariesDocumentsDeleteV1Request": ".libraries_documents_delete_v1op",
-    "LibrariesDocumentsDeleteV1RequestTypedDict": ".libraries_documents_delete_v1op",
-    "LibrariesDocumentsGetExtractedTextSignedURLV1Request": ".libraries_documents_get_extracted_text_signed_url_v1op",
-    "LibrariesDocumentsGetExtractedTextSignedURLV1RequestTypedDict": ".libraries_documents_get_extracted_text_signed_url_v1op",
-    "LibrariesDocumentsGetSignedURLV1Request": ".libraries_documents_get_signed_url_v1op",
-    "LibrariesDocumentsGetSignedURLV1RequestTypedDict": ".libraries_documents_get_signed_url_v1op",
-    "LibrariesDocumentsGetStatusV1Request": ".libraries_documents_get_status_v1op",
-    "LibrariesDocumentsGetStatusV1RequestTypedDict": ".libraries_documents_get_status_v1op",
-    "LibrariesDocumentsGetTextContentV1Request": ".libraries_documents_get_text_content_v1op",
-    "LibrariesDocumentsGetTextContentV1RequestTypedDict": ".libraries_documents_get_text_content_v1op",
-    "LibrariesDocumentsGetV1Request": ".libraries_documents_get_v1op",
-    "LibrariesDocumentsGetV1RequestTypedDict": ".libraries_documents_get_v1op",
-    "LibrariesDocumentsListV1Request": ".libraries_documents_list_v1op",
-    "LibrariesDocumentsListV1RequestTypedDict": ".libraries_documents_list_v1op",
-    "LibrariesDocumentsReprocessV1Request": ".libraries_documents_reprocess_v1op",
-    "LibrariesDocumentsReprocessV1RequestTypedDict": ".libraries_documents_reprocess_v1op",
-    "LibrariesDocumentsUpdateV1Request": ".libraries_documents_update_v1op",
-    "LibrariesDocumentsUpdateV1RequestTypedDict": ".libraries_documents_update_v1op",
-    "LibrariesDocumentsUploadV1DocumentUpload": ".libraries_documents_upload_v1op",
-    "LibrariesDocumentsUploadV1DocumentUploadTypedDict": ".libraries_documents_upload_v1op",
-    "LibrariesDocumentsUploadV1Request": ".libraries_documents_upload_v1op",
-    "LibrariesDocumentsUploadV1RequestTypedDict": ".libraries_documents_upload_v1op",
-    "LibrariesGetV1Request": ".libraries_get_v1op",
-    "LibrariesGetV1RequestTypedDict": ".libraries_get_v1op",
-    "LibrariesShareCreateV1Request": ".libraries_share_create_v1op",
-    "LibrariesShareCreateV1RequestTypedDict": ".libraries_share_create_v1op",
-    "LibrariesShareDeleteV1Request": ".libraries_share_delete_v1op",
-    "LibrariesShareDeleteV1RequestTypedDict": ".libraries_share_delete_v1op",
-    "LibrariesShareListV1Request": ".libraries_share_list_v1op",
-    "LibrariesShareListV1RequestTypedDict": ".libraries_share_list_v1op",
-    "LibrariesUpdateV1Request": ".libraries_update_v1op",
-    "LibrariesUpdateV1RequestTypedDict": ".libraries_update_v1op",
-    "LibraryIn": ".libraryin",
-    "LibraryInTypedDict": ".libraryin",
-    "LibraryInUpdate": ".libraryinupdate",
-    "LibraryInUpdateTypedDict": ".libraryinupdate",
-    "LibraryOut": ".libraryout",
-    "LibraryOutTypedDict": ".libraryout",
-    "ListDocumentOut": ".listdocumentout",
-    "ListDocumentOutTypedDict": ".listdocumentout",
     "ListFilesOut": ".listfilesout",
     "ListFilesOutTypedDict": ".listfilesout",
-    "ListLibraryOut": ".listlibraryout",
-    "ListLibraryOutTypedDict": ".listlibraryout",
-    "ListSharingOut": ".listsharingout",
-    "ListSharingOutTypedDict": ".listsharingout",
     "MessageEntries": ".messageentries",
     "MessageEntriesTypedDict": ".messageentries",
     "MessageInputContentChunks": ".messageinputcontentchunks",
@@ -2035,9 +1764,9 @@ _dynamic_imports: dict[str, str] = {
     "MessageInputEntryContent": ".messageinputentry",
     "MessageInputEntryContentTypedDict": ".messageinputentry",
     "MessageInputEntryRole": ".messageinputentry",
-    "MessageInputEntryType": ".messageinputentry",
     "MessageInputEntryTypedDict": ".messageinputentry",
     "Object": ".messageinputentry",
+    "Type": ".messageinputentry",
     "MessageOutputContentChunks": ".messageoutputcontentchunks",
     "MessageOutputContentChunksTypedDict": ".messageoutputcontentchunks",
     "MessageOutputEntry": ".messageoutputentry",
@@ -2055,6 +1784,7 @@ _dynamic_imports: dict[str, str] = {
     "MessageOutputEventTypedDict": ".messageoutputevent",
     "MetricOut": ".metricout",
     "MetricOutTypedDict": ".metricout",
+    "MistralError": ".mistralerror",
     "MistralPromptMode": ".mistralpromptmode",
     "ModelCapabilities": ".modelcapabilities",
     "ModelCapabilitiesTypedDict": ".modelcapabilities",
@@ -2063,10 +1793,15 @@ _dynamic_imports: dict[str, str] = {
     "ModelConversationTools": ".modelconversation",
     "ModelConversationToolsTypedDict": ".modelconversation",
     "ModelConversationTypedDict": ".modelconversation",
+    "Data": ".modellist",
+    "DataTypedDict": ".modellist",
+    "ModelList": ".modellist",
+    "ModelListTypedDict": ".modellist",
     "ModerationObject": ".moderationobject",
     "ModerationObjectTypedDict": ".moderationobject",
     "ModerationResponse": ".moderationresponse",
     "ModerationResponseTypedDict": ".moderationresponse",
+    "NoResponseError": ".no_response_error",
     "OCRImageObject": ".ocrimageobject",
     "OCRImageObjectTypedDict": ".ocrimageobject",
     "OCRPageDimensions": ".ocrpagedimensions",
@@ -2083,12 +1818,8 @@ _dynamic_imports: dict[str, str] = {
     "OCRUsageInfoTypedDict": ".ocrusageinfo",
     "OutputContentChunks": ".outputcontentchunks",
     "OutputContentChunksTypedDict": ".outputcontentchunks",
-    "PaginationInfo": ".paginationinfo",
-    "PaginationInfoTypedDict": ".paginationinfo",
     "Prediction": ".prediction",
     "PredictionTypedDict": ".prediction",
-    "ProcessingStatusOut": ".processingstatusout",
-    "ProcessingStatusOutTypedDict": ".processingstatusout",
     "ReferenceChunk": ".referencechunk",
     "ReferenceChunkType": ".referencechunk",
     "ReferenceChunkTypedDict": ".referencechunk",
@@ -2104,6 +1835,7 @@ _dynamic_imports: dict[str, str] = {
     "ResponseStartedEvent": ".responsestartedevent",
     "ResponseStartedEventType": ".responsestartedevent",
     "ResponseStartedEventTypedDict": ".responsestartedevent",
+    "ResponseValidationError": ".responsevalidationerror",
     "RetrieveModelV1ModelsModelIDGetRequest": ".retrieve_model_v1_models_model_id_getop",
     "RetrieveModelV1ModelsModelIDGetRequestTypedDict": ".retrieve_model_v1_models_model_id_getop",
     "RetrieveModelV1ModelsModelIDGetResponseRetrieveModelV1ModelsModelIDGet": ".retrieve_model_v1_models_model_id_getop",
@@ -2114,13 +1846,6 @@ _dynamic_imports: dict[str, str] = {
     "SDKError": ".sdkerror",
     "Security": ".security",
     "SecurityTypedDict": ".security",
-    "ShareEnum": ".shareenum",
-    "SharingDelete": ".sharingdelete",
-    "SharingDeleteTypedDict": ".sharingdelete",
-    "SharingIn": ".sharingin",
-    "SharingInTypedDict": ".sharingin",
-    "SharingOut": ".sharingout",
-    "SharingOutTypedDict": ".sharingout",
     "Source": ".source",
     "SSETypes": ".ssetypes",
     "Role": ".systemmessage",
@@ -2131,24 +1856,13 @@ _dynamic_imports: dict[str, str] = {
     "TextChunk": ".textchunk",
     "TextChunkType": ".textchunk",
     "TextChunkTypedDict": ".textchunk",
-    "ThinkChunk": ".thinkchunk",
-    "ThinkChunkType": ".thinkchunk",
-    "ThinkChunkTypedDict": ".thinkchunk",
-    "Thinking": ".thinkchunk",
-    "ThinkingTypedDict": ".thinkchunk",
-    "TimestampGranularity": ".timestampgranularity",
     "Tool": ".tool",
     "ToolTypedDict": ".tool",
-    "Metadata": ".toolcall",
-    "MetadataTypedDict": ".toolcall",
     "ToolCall": ".toolcall",
     "ToolCallTypedDict": ".toolcall",
     "ToolChoice": ".toolchoice",
     "ToolChoiceTypedDict": ".toolchoice",
     "ToolChoiceEnum": ".toolchoiceenum",
-    "ToolExecutionDeltaEvent": ".toolexecutiondeltaevent",
-    "ToolExecutionDeltaEventType": ".toolexecutiondeltaevent",
-    "ToolExecutionDeltaEventTypedDict": ".toolexecutiondeltaevent",
     "ToolExecutionDoneEvent": ".toolexecutiondoneevent",
     "ToolExecutionDoneEventType": ".toolexecutiondoneevent",
     "ToolExecutionDoneEventTypedDict": ".toolexecutiondoneevent",
@@ -2173,20 +1887,6 @@ _dynamic_imports: dict[str, str] = {
     "ToolTypes": ".tooltypes",
     "TrainingFile": ".trainingfile",
     "TrainingFileTypedDict": ".trainingfile",
-    "TranscriptionResponse": ".transcriptionresponse",
-    "TranscriptionResponseTypedDict": ".transcriptionresponse",
-    "TranscriptionSegmentChunk": ".transcriptionsegmentchunk",
-    "TranscriptionSegmentChunkTypedDict": ".transcriptionsegmentchunk",
-    "TranscriptionStreamDone": ".transcriptionstreamdone",
-    "TranscriptionStreamDoneTypedDict": ".transcriptionstreamdone",
-    "TranscriptionStreamEvents": ".transcriptionstreamevents",
-    "TranscriptionStreamEventsTypedDict": ".transcriptionstreamevents",
-    "TranscriptionStreamLanguage": ".transcriptionstreamlanguage",
-    "TranscriptionStreamLanguageTypedDict": ".transcriptionstreamlanguage",
-    "TranscriptionStreamSegmentDelta": ".transcriptionstreamsegmentdelta",
-    "TranscriptionStreamSegmentDeltaTypedDict": ".transcriptionstreamsegmentdelta",
-    "TranscriptionStreamTextDelta": ".transcriptionstreamtextdelta",
-    "TranscriptionStreamTextDeltaTypedDict": ".transcriptionstreamtextdelta",
     "UnarchiveFTModelOut": ".unarchiveftmodelout",
     "UnarchiveFTModelOutObject": ".unarchiveftmodelout",
     "UnarchiveFTModelOutTypedDict": ".unarchiveftmodelout",
@@ -2242,5 +1942,5 @@ def __getattr__(attr_name: str) -> object:
 
 
 def __dir__():
-    lazy_attrs = list(_dynamic_imports.keys())
-    return sorted(lazy_attrs)
+    lazy_attrs = builtins.list(_dynamic_imports.keys())
+    return builtins.sorted(lazy_attrs)

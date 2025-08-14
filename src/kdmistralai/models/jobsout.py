@@ -10,12 +10,12 @@ from typing import List, Literal, Optional, Union
 from typing_extensions import Annotated, NotRequired, TypeAliasType, TypedDict
 
 
-DataTypedDict = TypeAliasType(
-    "DataTypedDict", Union[ClassifierJobOutTypedDict, CompletionJobOutTypedDict]
+JobsOutDataTypedDict = TypeAliasType(
+    "JobsOutDataTypedDict", Union[ClassifierJobOutTypedDict, CompletionJobOutTypedDict]
 )
 
 
-Data = Annotated[
+JobsOutData = Annotated[
     Union[
         Annotated[ClassifierJobOut, Tag("classifier")],
         Annotated[CompletionJobOut, Tag("completion")],
@@ -29,13 +29,13 @@ JobsOutObject = Literal["list"]
 
 class JobsOutTypedDict(TypedDict):
     total: int
-    data: NotRequired[List[DataTypedDict]]
+    data: NotRequired[List[JobsOutDataTypedDict]]
     object: NotRequired[JobsOutObject]
 
 
 class JobsOut(BaseModel):
     total: int
 
-    data: Optional[List[Data]] = None
+    data: Optional[List[JobsOutData]] = None
 
     object: Optional[JobsOutObject] = "list"

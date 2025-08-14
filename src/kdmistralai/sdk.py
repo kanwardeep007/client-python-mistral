@@ -15,7 +15,6 @@ import weakref
 
 if TYPE_CHECKING:
     from kdmistralai.agents import Agents
-    from kdmistralai.audio import Audio
     from kdmistralai.batch import Batch
     from kdmistralai.beta import Beta
     from kdmistralai.chat import Chat
@@ -28,7 +27,7 @@ if TYPE_CHECKING:
     from kdmistralai.ocr import Ocr
 
 
-class Mistral(BaseSDK):
+class KdMistral(BaseSDK):
     r"""Mistral AI API: Our Chat Completion and Embeddings APIs specification. Create your account on [La Plateforme](https://console.mistral.ai) to get access and read the [docs](https://docs.mistral.ai) to learn how to use it."""
 
     models: "Models"
@@ -50,7 +49,6 @@ class Mistral(BaseSDK):
     r"""Classifiers API."""
     ocr: "Ocr"
     r"""OCR API"""
-    audio: "Audio"
     _sub_sdk_map = {
         "models": ("kdmistralai.models_", "Models"),
         "beta": ("kdmistralai.beta", "Beta"),
@@ -63,7 +61,6 @@ class Mistral(BaseSDK):
         "embeddings": ("kdmistralai.embeddings", "Embeddings"),
         "classifiers": ("kdmistralai.classifiers", "Classifiers"),
         "ocr": ("kdmistralai.ocr", "Ocr"),
-        "audio": ("kdmistralai.audio", "Audio"),
     }
 
     def __init__(

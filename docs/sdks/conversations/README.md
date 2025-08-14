@@ -24,16 +24,17 @@ Create a new conversation, using a base model or an agent and append entries. Co
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="agents_api_v1_conversations_start" method="post" path="/v1/conversations" -->
 ```python
-from kdmistralai import Mistral
+from kdmistralai import KdMistral
 import os
 
 
-with Mistral(
+with KdMistral(
     api_key=os.getenv("MISTRAL_API_KEY", ""),
-) as mistral:
+) as kd_mistral:
 
-    res = mistral.beta.conversations.start(inputs="<value>", stream=False)
+    res = kd_mistral.beta.conversations.start(inputs="<value>", stream=False)
 
     # Handle response
     print(res)
@@ -74,16 +75,17 @@ Retrieve a list of conversation entities sorted by creation time.
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="agents_api_v1_conversations_list" method="get" path="/v1/conversations" -->
 ```python
-from kdmistralai import Mistral
+from kdmistralai import KdMistral
 import os
 
 
-with Mistral(
+with KdMistral(
     api_key=os.getenv("MISTRAL_API_KEY", ""),
-) as mistral:
+) as kd_mistral:
 
-    res = mistral.beta.conversations.list(page=0, page_size=100)
+    res = kd_mistral.beta.conversations.list(page=0, page_size=100)
 
     # Handle response
     print(res)
@@ -115,16 +117,17 @@ Given a conversation_id retrieve a conversation entity with its attributes.
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="agents_api_v1_conversations_get" method="get" path="/v1/conversations/{conversation_id}" -->
 ```python
-from kdmistralai import Mistral
+from kdmistralai import KdMistral
 import os
 
 
-with Mistral(
+with KdMistral(
     api_key=os.getenv("MISTRAL_API_KEY", ""),
-) as mistral:
+) as kd_mistral:
 
-    res = mistral.beta.conversations.get(conversation_id="<id>")
+    res = kd_mistral.beta.conversations.get(conversation_id="<id>")
 
     # Handle response
     print(res)
@@ -155,16 +158,17 @@ Run completion on the history of the conversation and the user entries. Return t
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="agents_api_v1_conversations_append" method="post" path="/v1/conversations/{conversation_id}" -->
 ```python
-from kdmistralai import Mistral
+from kdmistralai import KdMistral
 import os
 
 
-with Mistral(
+with KdMistral(
     api_key=os.getenv("MISTRAL_API_KEY", ""),
-) as mistral:
+) as kd_mistral:
 
-    res = mistral.beta.conversations.append(conversation_id="<id>", inputs=[], stream=False, store=True, handoff_execution="server")
+    res = kd_mistral.beta.conversations.append(conversation_id="<id>", inputs=[], stream=False, store=True, handoff_execution="server")
 
     # Handle response
     print(res)
@@ -200,16 +204,17 @@ Given a conversation_id retrieve all the entries belonging to that conversation.
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="agents_api_v1_conversations_history" method="get" path="/v1/conversations/{conversation_id}/history" -->
 ```python
-from kdmistralai import Mistral
+from kdmistralai import KdMistral
 import os
 
 
-with Mistral(
+with KdMistral(
     api_key=os.getenv("MISTRAL_API_KEY", ""),
-) as mistral:
+) as kd_mistral:
 
-    res = mistral.beta.conversations.get_history(conversation_id="<id>")
+    res = kd_mistral.beta.conversations.get_history(conversation_id="<id>")
 
     # Handle response
     print(res)
@@ -240,16 +245,17 @@ Given a conversation_id retrieve all the messages belonging to that conversation
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="agents_api_v1_conversations_messages" method="get" path="/v1/conversations/{conversation_id}/messages" -->
 ```python
-from kdmistralai import Mistral
+from kdmistralai import KdMistral
 import os
 
 
-with Mistral(
+with KdMistral(
     api_key=os.getenv("MISTRAL_API_KEY", ""),
-) as mistral:
+) as kd_mistral:
 
-    res = mistral.beta.conversations.get_messages(conversation_id="<id>")
+    res = kd_mistral.beta.conversations.get_messages(conversation_id="<id>")
 
     # Handle response
     print(res)
@@ -280,16 +286,17 @@ Given a conversation_id and an id, recreate a conversation from this point and r
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="agents_api_v1_conversations_restart" method="post" path="/v1/conversations/{conversation_id}/restart" -->
 ```python
-from kdmistralai import Mistral
+from kdmistralai import KdMistral
 import os
 
 
-with Mistral(
+with KdMistral(
     api_key=os.getenv("MISTRAL_API_KEY", ""),
-) as mistral:
+) as kd_mistral:
 
-    res = mistral.beta.conversations.restart(conversation_id="<id>", inputs="<value>", from_entry_id="<id>", stream=False, store=True, handoff_execution="server")
+    res = kd_mistral.beta.conversations.restart(conversation_id="<id>", inputs="<value>", from_entry_id="<id>", stream=False, store=True, handoff_execution="server")
 
     # Handle response
     print(res)
@@ -326,16 +333,17 @@ Create a new conversation, using a base model or an agent and append entries. Co
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="agents_api_v1_conversations_start_stream" method="post" path="/v1/conversations#stream" -->
 ```python
-from kdmistralai import Mistral
+from kdmistralai import KdMistral
 import os
 
 
-with Mistral(
+with KdMistral(
     api_key=os.getenv("MISTRAL_API_KEY", ""),
-) as mistral:
+) as kd_mistral:
 
-    res = mistral.beta.conversations.start_stream(inputs=[
+    res = kd_mistral.beta.conversations.start_stream(inputs=[
         {
             "object": "entry",
             "type": "function.result",
@@ -385,16 +393,17 @@ Run completion on the history of the conversation and the user entries. Return t
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="agents_api_v1_conversations_append_stream" method="post" path="/v1/conversations/{conversation_id}#stream" -->
 ```python
-from kdmistralai import Mistral
+from kdmistralai import KdMistral
 import os
 
 
-with Mistral(
+with KdMistral(
     api_key=os.getenv("MISTRAL_API_KEY", ""),
-) as mistral:
+) as kd_mistral:
 
-    res = mistral.beta.conversations.append_stream(conversation_id="<id>", inputs="<value>", stream=True, store=True, handoff_execution="server")
+    res = kd_mistral.beta.conversations.append_stream(conversation_id="<id>", inputs="<value>", stream=True, store=True, handoff_execution="server")
 
     with res as event_stream:
         for event in event_stream:
@@ -432,22 +441,25 @@ Given a conversation_id and an id, recreate a conversation from this point and r
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="agents_api_v1_conversations_restart_stream" method="post" path="/v1/conversations/{conversation_id}/restart#stream" -->
 ```python
-from kdmistralai import Mistral
+from kdmistralai import KdMistral
 import os
 
 
-with Mistral(
+with KdMistral(
     api_key=os.getenv("MISTRAL_API_KEY", ""),
-) as mistral:
+) as kd_mistral:
 
-    res = mistral.beta.conversations.restart_stream(conversation_id="<id>", inputs=[
+    res = kd_mistral.beta.conversations.restart_stream(conversation_id="<id>", inputs=[
         {
             "object": "entry",
-            "type": "message.input",
-            "role": "assistant",
-            "content": "<value>",
-            "prefix": False,
+            "type": "function.call",
+            "tool_call_id": "<id>",
+            "name": "<value>",
+            "arguments": {
+                "key": "<value>",
+            },
         },
     ], from_entry_id="<id>", stream=True, store=True, handoff_execution="server")
 

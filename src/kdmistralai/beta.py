@@ -3,17 +3,14 @@
 from .basesdk import BaseSDK
 from .sdkconfiguration import SDKConfiguration
 from kdmistralai.conversations import Conversations
-from kdmistralai.libraries import Libraries
-from kdmistralai.mistral_agents import MistralAgents
+from kdmistralai.kdmistral_agents import KdMistralAgents
 
 
 class Beta(BaseSDK):
     conversations: Conversations
     r"""(beta) Conversations API"""
-    agents: MistralAgents
+    agents: KdMistralAgents
     r"""(beta) Agents API"""
-    libraries: Libraries
-    r"""(beta) Libraries API for indexing documents to enhance agent capabilities."""
 
     def __init__(self, sdk_config: SDKConfiguration) -> None:
         BaseSDK.__init__(self, sdk_config)
@@ -22,5 +19,4 @@ class Beta(BaseSDK):
 
     def _init_sdks(self):
         self.conversations = Conversations(self.sdk_configuration)
-        self.agents = MistralAgents(self.sdk_configuration)
-        self.libraries = Libraries(self.sdk_configuration)
+        self.agents = KdMistralAgents(self.sdk_configuration)

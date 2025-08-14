@@ -16,16 +16,17 @@ Agents Completion
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="agents_completion_v1_agents_completions_post" method="post" path="/v1/agents/completions" -->
 ```python
-from kdmistralai import Mistral
+from kdmistralai import KdMistral
 import os
 
 
-with Mistral(
+with KdMistral(
     api_key=os.getenv("MISTRAL_API_KEY", ""),
-) as mistral:
+) as kd_mistral:
 
-    res = mistral.agents.complete(messages=[
+    res = kd_mistral.agents.complete(messages=[
         {
             "content": "Who is the best French painter? Answer in one short sentence.",
             "role": "user",
@@ -75,16 +76,17 @@ Mistral AI provides the ability to stream responses back to a client in order to
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="stream_agents" method="post" path="/v1/agents/completions#stream" -->
 ```python
-from kdmistralai import Mistral
+from kdmistralai import KdMistral
 import os
 
 
-with Mistral(
+with KdMistral(
     api_key=os.getenv("MISTRAL_API_KEY", ""),
-) as mistral:
+) as kd_mistral:
 
-    res = mistral.agents.stream(messages=[
+    res = kd_mistral.agents.stream(messages=[
         {
             "content": "Who is the best French painter? Answer in one short sentence.",
             "role": "user",

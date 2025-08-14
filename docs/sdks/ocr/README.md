@@ -15,16 +15,17 @@ OCR
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="ocr_v1_ocr_post" method="post" path="/v1/ocr" -->
 ```python
-from kdmistralai import Mistral
+from kdmistralai import KdMistral
 import os
 
 
-with Mistral(
+with KdMistral(
     api_key=os.getenv("MISTRAL_API_KEY", ""),
-) as mistral:
+) as kd_mistral:
 
-    res = mistral.ocr.process(model="CX-9", document={
+    res = kd_mistral.ocr.process(model="CX-9", document={
         "image_url": {
             "url": "https://measly-scrap.com",
         },

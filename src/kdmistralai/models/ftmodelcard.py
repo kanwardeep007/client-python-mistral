@@ -18,9 +18,6 @@ from typing import List, Literal, Optional
 from typing_extensions import Annotated, NotRequired, TypedDict
 
 
-FTModelCardType = Literal["fine-tuned"]
-
-
 class FTModelCardTypedDict(TypedDict):
     r"""Extra fields for fine-tuned models."""
 
@@ -38,7 +35,7 @@ class FTModelCardTypedDict(TypedDict):
     deprecation: NotRequired[Nullable[datetime]]
     deprecation_replacement_model: NotRequired[Nullable[str]]
     default_model_temperature: NotRequired[Nullable[float]]
-    type: FTModelCardType
+    type: Literal["fine-tuned"]
     archived: NotRequired[bool]
 
 
@@ -75,7 +72,8 @@ class FTModelCard(BaseModel):
 
     TYPE: Annotated[
         Annotated[
-            Optional[FTModelCardType], AfterValidator(validate_const("fine-tuned"))
+            Optional[Literal["fine-tuned"]],
+            AfterValidator(validate_const("fine-tuned")),
         ],
         pydantic.Field(alias="type"),
     ] = "fine-tuned"
