@@ -17,10 +17,10 @@ ConversationHistoryObject = Literal["conversation.history"]
 EntriesTypedDict = TypeAliasType(
     "EntriesTypedDict",
     Union[
-        FunctionResultEntryTypedDict,
         MessageInputEntryTypedDict,
-        FunctionCallEntryTypedDict,
+        FunctionResultEntryTypedDict,
         ToolExecutionEntryTypedDict,
+        FunctionCallEntryTypedDict,
         MessageOutputEntryTypedDict,
         AgentHandoffEntryTypedDict,
     ],
@@ -30,10 +30,10 @@ EntriesTypedDict = TypeAliasType(
 Entries = TypeAliasType(
     "Entries",
     Union[
-        FunctionResultEntry,
         MessageInputEntry,
-        FunctionCallEntry,
+        FunctionResultEntry,
         ToolExecutionEntry,
+        FunctionCallEntry,
         MessageOutputEntry,
         AgentHandoffEntry,
     ],

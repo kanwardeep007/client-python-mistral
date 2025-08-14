@@ -58,7 +58,15 @@ Mistral AI API: Our Chat Completion and Embeddings APIs specification. Create yo
 >
 > Once a Python version reaches its [official end of life date](https://devguide.python.org/versions/), a 3-month grace period is provided for users to upgrade. Following this grace period, the minimum python version supported in the SDK will be updated.
 
-The SDK can be installed with either *pip* or *poetry* package managers.
+The SDK can be installed with *uv*, *pip*, or *poetry* package managers.
+
+### uv
+
+*uv* is a fast Python package installer and resolver, designed as a drop-in replacement for pip and pip-tools. It's recommended for its speed and modern Python tooling capabilities.
+
+```bash
+uv add kdmistralai
+```
 
 ### PIP
 
@@ -95,9 +103,9 @@ It's also possible to write a standalone Python script without needing to set up
 # ]
 # ///
 
-from kdmistralai import Mistral
+from kdmistralai import KdMistral
 
-sdk = Mistral(
+sdk = KdMistral(
   # SDK arguments
 )
 
@@ -129,15 +137,15 @@ This example shows how to create chat completions.
 
 ```python
 # Synchronous Example
-from kdmistralai import Mistral
+from kdmistralai import KdMistral
 import os
 
 
-with Mistral(
+with KdMistral(
     api_key=os.getenv("MISTRAL_API_KEY", ""),
-) as mistral:
+) as kd_mistral:
 
-    res = mistral.chat.complete(model="mistral-small-latest", messages=[
+    res = kd_mistral.chat.complete(model="mistral-small-latest", messages=[
         {
             "content": "Who is the best French painter? Answer in one short sentence.",
             "role": "user",
@@ -150,20 +158,20 @@ with Mistral(
 
 </br>
 
-The same SDK client can also be used to make asychronous requests by importing asyncio.
+The same SDK client can also be used to make asynchronous requests by importing asyncio.
 ```python
 # Asynchronous Example
 import asyncio
-from kdmistralai import Mistral
+from kdmistralai import KdMistral
 import os
 
 async def main():
 
-    async with Mistral(
+    async with KdMistral(
         api_key=os.getenv("MISTRAL_API_KEY", ""),
-    ) as mistral:
+    ) as kd_mistral:
 
-        res = await mistral.chat.complete_async(model="mistral-small-latest", messages=[
+        res = await kd_mistral.chat.complete_async(model="mistral-small-latest", messages=[
             {
                 "content": "Who is the best French painter? Answer in one short sentence.",
                 "role": "user",
@@ -182,15 +190,15 @@ This example shows how to upload a file.
 
 ```python
 # Synchronous Example
-from kdmistralai import Mistral
+from kdmistralai import KdMistral
 import os
 
 
-with Mistral(
+with KdMistral(
     api_key=os.getenv("MISTRAL_API_KEY", ""),
-) as mistral:
+) as kd_mistral:
 
-    res = mistral.files.upload(file={
+    res = kd_mistral.files.upload(file={
         "file_name": "example.file",
         "content": open("example.file", "rb"),
     })
@@ -201,20 +209,20 @@ with Mistral(
 
 </br>
 
-The same SDK client can also be used to make asychronous requests by importing asyncio.
+The same SDK client can also be used to make asynchronous requests by importing asyncio.
 ```python
 # Asynchronous Example
 import asyncio
-from kdmistralai import Mistral
+from kdmistralai import KdMistral
 import os
 
 async def main():
 
-    async with Mistral(
+    async with KdMistral(
         api_key=os.getenv("MISTRAL_API_KEY", ""),
-    ) as mistral:
+    ) as kd_mistral:
 
-        res = await mistral.files.upload_async(file={
+        res = await kd_mistral.files.upload_async(file={
             "file_name": "example.file",
             "content": open("example.file", "rb"),
         })
@@ -231,15 +239,15 @@ This example shows how to create agents completions.
 
 ```python
 # Synchronous Example
-from kdmistralai import Mistral
+from kdmistralai import KdMistral
 import os
 
 
-with Mistral(
+with KdMistral(
     api_key=os.getenv("MISTRAL_API_KEY", ""),
-) as mistral:
+) as kd_mistral:
 
-    res = mistral.agents.complete(messages=[
+    res = kd_mistral.agents.complete(messages=[
         {
             "content": "Who is the best French painter? Answer in one short sentence.",
             "role": "user",
@@ -252,20 +260,20 @@ with Mistral(
 
 </br>
 
-The same SDK client can also be used to make asychronous requests by importing asyncio.
+The same SDK client can also be used to make asynchronous requests by importing asyncio.
 ```python
 # Asynchronous Example
 import asyncio
-from kdmistralai import Mistral
+from kdmistralai import KdMistral
 import os
 
 async def main():
 
-    async with Mistral(
+    async with KdMistral(
         api_key=os.getenv("MISTRAL_API_KEY", ""),
-    ) as mistral:
+    ) as kd_mistral:
 
-        res = await mistral.agents.complete_async(messages=[
+        res = await kd_mistral.agents.complete_async(messages=[
             {
                 "content": "Who is the best French painter? Answer in one short sentence.",
                 "role": "user",
@@ -284,15 +292,15 @@ This example shows how to create embedding request.
 
 ```python
 # Synchronous Example
-from kdmistralai import Mistral
+from kdmistralai import KdMistral
 import os
 
 
-with Mistral(
+with KdMistral(
     api_key=os.getenv("MISTRAL_API_KEY", ""),
-) as mistral:
+) as kd_mistral:
 
-    res = mistral.embeddings.create(model="mistral-embed", inputs=[
+    res = kd_mistral.embeddings.create(model="mistral-embed", inputs=[
         "Embed this sentence.",
         "As well as this one.",
     ])
@@ -303,20 +311,20 @@ with Mistral(
 
 </br>
 
-The same SDK client can also be used to make asychronous requests by importing asyncio.
+The same SDK client can also be used to make asynchronous requests by importing asyncio.
 ```python
 # Asynchronous Example
 import asyncio
-from kdmistralai import Mistral
+from kdmistralai import KdMistral
 import os
 
 async def main():
 
-    async with Mistral(
+    async with KdMistral(
         api_key=os.getenv("MISTRAL_API_KEY", ""),
-    ) as mistral:
+    ) as kd_mistral:
 
-        res = await mistral.embeddings.create_async(model="mistral-embed", inputs=[
+        res = await kd_mistral.embeddings.create_async(model="mistral-embed", inputs=[
             "Embed this sentence.",
             "As well as this one.",
         ])
@@ -434,34 +442,26 @@ The documentation for the GCP SDK is available [here](packages/mistralai_gcp/REA
 * [complete](docs/sdks/agents/README.md#complete) - Agents Completion
 * [stream](docs/sdks/agents/README.md#stream) - Stream Agents completion
 
-### [audio](docs/sdks/audio/README.md)
-
-
-#### [audio.transcriptions](docs/sdks/transcriptions/README.md)
-
-* [complete](docs/sdks/transcriptions/README.md#complete) - Create Transcription
-* [stream](docs/sdks/transcriptions/README.md#stream) - Create streaming transcription (SSE)
-
 ### [batch](docs/sdks/batch/README.md)
 
 
-#### [batch.jobs](docs/sdks/mistraljobs/README.md)
+#### [batch.jobs](docs/sdks/kdmistraljobs/README.md)
 
-* [list](docs/sdks/mistraljobs/README.md#list) - Get Batch Jobs
-* [create](docs/sdks/mistraljobs/README.md#create) - Create Batch Job
-* [get](docs/sdks/mistraljobs/README.md#get) - Get Batch Job
-* [cancel](docs/sdks/mistraljobs/README.md#cancel) - Cancel Batch Job
+* [list](docs/sdks/kdmistraljobs/README.md#list) - Get Batch Jobs
+* [create](docs/sdks/kdmistraljobs/README.md#create) - Create Batch Job
+* [get](docs/sdks/kdmistraljobs/README.md#get) - Get Batch Job
+* [cancel](docs/sdks/kdmistraljobs/README.md#cancel) - Cancel Batch Job
 
 ### [beta](docs/sdks/beta/README.md)
 
 
-#### [beta.agents](docs/sdks/mistralagents/README.md)
+#### [beta.agents](docs/sdks/kdmistralagents/README.md)
 
-* [create](docs/sdks/mistralagents/README.md#create) - Create a agent that can be used within a conversation.
-* [list](docs/sdks/mistralagents/README.md#list) - List agent entities.
-* [get](docs/sdks/mistralagents/README.md#get) - Retrieve an agent entity.
-* [update](docs/sdks/mistralagents/README.md#update) - Update an agent entity.
-* [update_version](docs/sdks/mistralagents/README.md#update_version) - Update an agent version.
+* [create](docs/sdks/kdmistralagents/README.md#create) - Create a agent that can be used within a conversation.
+* [list](docs/sdks/kdmistralagents/README.md#list) - List agent entities.
+* [get](docs/sdks/kdmistralagents/README.md#get) - Retrieve an agent entity.
+* [update](docs/sdks/kdmistralagents/README.md#update) - Update an agent entity.
+* [update_version](docs/sdks/kdmistralagents/README.md#update_version) - Update an agent version.
 
 #### [beta.conversations](docs/sdks/conversations/README.md)
 
@@ -475,33 +475,6 @@ The documentation for the GCP SDK is available [here](packages/mistralai_gcp/REA
 * [start_stream](docs/sdks/conversations/README.md#start_stream) - Create a conversation and append entries to it.
 * [append_stream](docs/sdks/conversations/README.md#append_stream) - Append new entries to an existing conversation.
 * [restart_stream](docs/sdks/conversations/README.md#restart_stream) - Restart a conversation starting from a given entry.
-
-#### [beta.libraries](docs/sdks/libraries/README.md)
-
-* [list](docs/sdks/libraries/README.md#list) - List all libraries you have access to.
-* [create](docs/sdks/libraries/README.md#create) - Create a new Library.
-* [get](docs/sdks/libraries/README.md#get) - Detailed information about a specific Library.
-* [delete](docs/sdks/libraries/README.md#delete) - Delete a library and all of it's document.
-* [update](docs/sdks/libraries/README.md#update) - Update a library.
-
-#### [beta.libraries.accesses](docs/sdks/accesses/README.md)
-
-* [list](docs/sdks/accesses/README.md#list) - List all of the access to this library.
-* [update_or_create](docs/sdks/accesses/README.md#update_or_create) - Create or update an access level.
-* [delete](docs/sdks/accesses/README.md#delete) - Delete an access level.
-
-#### [beta.libraries.documents](docs/sdks/documents/README.md)
-
-* [list](docs/sdks/documents/README.md#list) - List document in a given library.
-* [upload](docs/sdks/documents/README.md#upload) - Upload a new document.
-* [get](docs/sdks/documents/README.md#get) - Retrieve the metadata of a specific document.
-* [update](docs/sdks/documents/README.md#update) - Update the metadata of a specific document.
-* [delete](docs/sdks/documents/README.md#delete) - Delete a document.
-* [text_content](docs/sdks/documents/README.md#text_content) - Retrieve the text content of a specific document.
-* [status](docs/sdks/documents/README.md#status) - Retrieve the processing status of a specific document.
-* [get_signed_url](docs/sdks/documents/README.md#get_signed_url) - Retrieve the signed URL of a specific document.
-* [extracted_text_signed_url](docs/sdks/documents/README.md#extracted_text_signed_url) - Retrieve the signed URL of text extracted from a given document.
-* [reprocess](docs/sdks/documents/README.md#reprocess) - Reprocess a document.
 
 ### [chat](docs/sdks/chat/README.md)
 
@@ -547,6 +520,7 @@ The documentation for the GCP SDK is available [here](packages/mistralai_gcp/REA
 
 ### [models](docs/sdks/models/README.md)
 
+* [list](docs/sdks/models/README.md#list) - List Models
 * [retrieve](docs/sdks/models/README.md#retrieve) - Retrieve Model
 * [delete](docs/sdks/models/README.md#delete) - Delete Model
 * [update](docs/sdks/models/README.md#update) - Update Fine Tuned Model
@@ -573,15 +547,15 @@ The stream is also a [Context Manager][context-manager] and can be used with the
 underlying connection when the context is exited.
 
 ```python
-from kdmistralai import Mistral
+from kdmistralai import KdMistral
 import os
 
 
-with Mistral(
+with KdMistral(
     api_key=os.getenv("MISTRAL_API_KEY", ""),
-) as mistral:
+) as kd_mistral:
 
-    res = mistral.beta.conversations.start_stream(inputs=[
+    res = kd_mistral.beta.conversations.start_stream(inputs=[
         {
             "object": "entry",
             "type": "function.result",
@@ -613,15 +587,15 @@ Certain SDK methods accept file objects as part of a request body or multi-part 
 >
 
 ```python
-from kdmistralai import Mistral
+from kdmistralai import KdMistral
 import os
 
 
-with Mistral(
+with KdMistral(
     api_key=os.getenv("MISTRAL_API_KEY", ""),
-) as mistral:
+) as kd_mistral:
 
-    res = mistral.beta.libraries.documents.upload(library_id="a02150d9-5ee0-4877-b62c-28b1fcdf3b76", file={
+    res = kd_mistral.files.upload(file={
         "file_name": "example.file",
         "content": open("example.file", "rb"),
     })
@@ -639,16 +613,16 @@ Some of the endpoints in this SDK support retries. If you use the SDK without an
 
 To change the default retry strategy for a single API call, simply provide a `RetryConfig` object to the call:
 ```python
-from kdmistralai import Mistral
+from kdmistralai import KdMistral
 from kdmistralai.utils import BackoffStrategy, RetryConfig
 import os
 
 
-with Mistral(
+with KdMistral(
     api_key=os.getenv("MISTRAL_API_KEY", ""),
-) as mistral:
+) as kd_mistral:
 
-    res = mistral.models.retrieve(model_id="ft:open-mistral-7b:587a6b29:20240514:7e773925",
+    res = kd_mistral.models.list(,
         RetryConfig("backoff", BackoffStrategy(1, 50, 1.1, 100), False))
 
     # Handle response
@@ -658,17 +632,17 @@ with Mistral(
 
 If you'd like to override the default retry strategy for all operations that support retries, you can use the `retry_config` optional parameter when initializing the SDK:
 ```python
-from kdmistralai import Mistral
+from kdmistralai import KdMistral
 from kdmistralai.utils import BackoffStrategy, RetryConfig
 import os
 
 
-with Mistral(
+with KdMistral(
     retry_config=RetryConfig("backoff", BackoffStrategy(1, 50, 1.1, 100), False),
     api_key=os.getenv("MISTRAL_API_KEY", ""),
-) as mistral:
+) as kd_mistral:
 
-    res = mistral.models.retrieve(model_id="ft:open-mistral-7b:587a6b29:20240514:7e773925")
+    res = kd_mistral.models.list()
 
     # Handle response
     print(res)
@@ -679,49 +653,70 @@ with Mistral(
 <!-- Start Error Handling [errors] -->
 ## Error Handling
 
-Handling errors in this SDK should largely match your expectations. All operations return a response object or raise an exception.
+[`MistralError`](./src/kdmistralai/models/mistralerror.py) is the base class for all HTTP error responses. It has the following properties:
 
-By default, an API error will raise a models.SDKError exception, which has the following properties:
-
-| Property        | Type             | Description           |
-|-----------------|------------------|-----------------------|
-| `.status_code`  | *int*            | The HTTP status code  |
-| `.message`      | *str*            | The error message     |
-| `.raw_response` | *httpx.Response* | The raw HTTP response |
-| `.body`         | *str*            | The response content  |
-
-When custom error responses are specified for an operation, the SDK may also raise their associated exceptions. You can refer to respective *Errors* tables in SDK docs for more details on possible exception types for each operation. For example, the `retrieve_async` method may raise the following exceptions:
-
-| Error Type                 | Status Code | Content Type     |
-| -------------------------- | ----------- | ---------------- |
-| models.HTTPValidationError | 422         | application/json |
-| models.SDKError            | 4XX, 5XX    | \*/\*            |
+| Property           | Type             | Description                                                                             |
+| ------------------ | ---------------- | --------------------------------------------------------------------------------------- |
+| `err.message`      | `str`            | Error message                                                                           |
+| `err.status_code`  | `int`            | HTTP response status code eg `404`                                                      |
+| `err.headers`      | `httpx.Headers`  | HTTP response headers                                                                   |
+| `err.body`         | `str`            | HTTP body. Can be empty string if no body is returned.                                  |
+| `err.raw_response` | `httpx.Response` | Raw HTTP response                                                                       |
+| `err.data`         |                  | Optional. Some errors may contain structured data. [See Error Classes](#error-classes). |
 
 ### Example
-
 ```python
-from kdmistralai import Mistral, models
+import kdmistralai
+from kdmistralai import KdMistral, models
 import os
 
 
-with Mistral(
+with KdMistral(
     api_key=os.getenv("MISTRAL_API_KEY", ""),
-) as mistral:
+) as kd_mistral:
     res = None
     try:
 
-        res = mistral.models.retrieve(model_id="ft:open-mistral-7b:587a6b29:20240514:7e773925")
+        res = kd_mistral.models.list()
 
         # Handle response
         print(res)
 
-    except models.HTTPValidationError as e:
-        # handle e.data: models.HTTPValidationErrorData
-        raise(e)
-    except models.SDKError as e:
-        # handle exception
-        raise(e)
+
+    except models.MistralError as e:
+        # The base class for HTTP error responses
+        print(e.message)
+        print(e.status_code)
+        print(e.body)
+        print(e.headers)
+        print(e.raw_response)
+
+        # Depending on the method different errors may be thrown
+        if isinstance(e, models.HTTPValidationError):
+            print(e.data.detail)  # Optional[List[kdmistralai.ValidationError]]
 ```
+
+### Error Classes
+**Primary error:**
+* [`MistralError`](./src/kdmistralai/models/mistralerror.py): The base class for HTTP error responses.
+
+<details><summary>Less common errors (6)</summary>
+
+<br />
+
+**Network errors:**
+* [`httpx.RequestError`](https://www.python-httpx.org/exceptions/#httpx.RequestError): Base class for request errors.
+    * [`httpx.ConnectError`](https://www.python-httpx.org/exceptions/#httpx.ConnectError): HTTP client was unable to make a request to a server.
+    * [`httpx.TimeoutException`](https://www.python-httpx.org/exceptions/#httpx.TimeoutException): HTTP request timed out.
+
+
+**Inherit from [`MistralError`](./src/kdmistralai/models/mistralerror.py)**:
+* [`HTTPValidationError`](./src/kdmistralai/models/httpvalidationerror.py): Validation Error. Status code `422`. Applicable to 30 of 48 methods.*
+* [`ResponseValidationError`](./src/kdmistralai/models/responsevalidationerror.py): Type mismatch between the response data and the expected Pydantic model. Provides access to the Pydantic validation error via the `cause` attribute.
+
+</details>
+
+\* Check [the method documentation](#available-resources-and-operations) to see if the error is applicable.
 <!-- End Error Handling [errors] -->
 
 <!-- Start Server Selection [server] -->
@@ -738,16 +733,16 @@ You can override the default server globally by passing a server name to the `se
 #### Example
 
 ```python
-from kdmistralai import Mistral
+from kdmistralai import KdMistral
 import os
 
 
-with Mistral(
+with KdMistral(
     server="eu",
     api_key=os.getenv("MISTRAL_API_KEY", ""),
-) as mistral:
+) as kd_mistral:
 
-    res = mistral.models.retrieve(model_id="ft:open-mistral-7b:587a6b29:20240514:7e773925")
+    res = kd_mistral.models.list()
 
     # Handle response
     print(res)
@@ -758,16 +753,16 @@ with Mistral(
 
 The default server can also be overridden globally by passing a URL to the `server_url: str` optional parameter when initializing the SDK client instance. For example:
 ```python
-from kdmistralai import Mistral
+from kdmistralai import KdMistral
 import os
 
 
-with Mistral(
+with KdMistral(
     server_url="https://api.mistral.ai",
     api_key=os.getenv("MISTRAL_API_KEY", ""),
-) as mistral:
+) as kd_mistral:
 
-    res = mistral.models.retrieve(model_id="ft:open-mistral-7b:587a6b29:20240514:7e773925")
+    res = kd_mistral.models.list()
 
     # Handle response
     print(res)
@@ -784,16 +779,16 @@ This allows you to wrap the client with your own custom logic, such as adding cu
 
 For example, you could specify a header for every request that this sdk makes as follows:
 ```python
-from kdmistralai import Mistral
+from kdmistralai import KdMistral
 import httpx
 
 http_client = httpx.Client(headers={"x-custom-header": "someValue"})
-s = Mistral(client=http_client)
+s = KdMistral(client=http_client)
 ```
 
 or you could wrap the client with your own custom logic:
 ```python
-from kdmistralai import Mistral
+from kdmistralai import KdMistral
 from kdmistralai.httpclient import AsyncHttpClient
 import httpx
 
@@ -852,7 +847,7 @@ class CustomClient(AsyncHttpClient):
             extensions=extensions,
         )
 
-s = Mistral(async_client=CustomClient(httpx.AsyncClient()))
+s = KdMistral(async_client=CustomClient(httpx.AsyncClient()))
 ```
 <!-- End Custom HTTP Client [http-client] -->
 
@@ -869,15 +864,15 @@ This SDK supports the following security scheme globally:
 
 To authenticate with the API the `api_key` parameter must be set when initializing the SDK client instance. For example:
 ```python
-from kdmistralai import Mistral
+from kdmistralai import KdMistral
 import os
 
 
-with Mistral(
+with KdMistral(
     api_key=os.getenv("MISTRAL_API_KEY", ""),
-) as mistral:
+) as kd_mistral:
 
-    res = mistral.models.retrieve(model_id="ft:open-mistral-7b:587a6b29:20240514:7e773925")
+    res = kd_mistral.models.list()
 
     # Handle response
     print(res)
@@ -888,27 +883,27 @@ with Mistral(
 <!-- Start Resource Management [resource-management] -->
 ## Resource Management
 
-The `Mistral` class implements the context manager protocol and registers a finalizer function to close the underlying sync and async HTTPX clients it uses under the hood. This will close HTTP connections, release memory and free up other resources held by the SDK. In short-lived Python programs and notebooks that make a few SDK method calls, resource management may not be a concern. However, in longer-lived programs, it is beneficial to create a single SDK instance via a [context manager][context-manager] and reuse it across the application.
+The `KdMistral` class implements the context manager protocol and registers a finalizer function to close the underlying sync and async HTTPX clients it uses under the hood. This will close HTTP connections, release memory and free up other resources held by the SDK. In short-lived Python programs and notebooks that make a few SDK method calls, resource management may not be a concern. However, in longer-lived programs, it is beneficial to create a single SDK instance via a [context manager][context-manager] and reuse it across the application.
 
 [context-manager]: https://docs.python.org/3/reference/datamodel.html#context-managers
 
 ```python
-from kdmistralai import Mistral
+from kdmistralai import KdMistral
 import os
 def main():
 
-    with Mistral(
+    with KdMistral(
         api_key=os.getenv("MISTRAL_API_KEY", ""),
-    ) as mistral:
+    ) as kd_mistral:
         # Rest of application here...
 
 
 # Or when using async:
 async def amain():
 
-    async with Mistral(
+    async with KdMistral(
         api_key=os.getenv("MISTRAL_API_KEY", ""),
-    ) as mistral:
+    ) as kd_mistral:
         # Rest of application here...
 ```
 <!-- End Resource Management [resource-management] -->
@@ -920,11 +915,11 @@ You can setup your SDK to emit debug logs for SDK requests and responses.
 
 You can pass your own logger class directly into your SDK.
 ```python
-from kdmistralai import Mistral
+from kdmistralai import KdMistral
 import logging
 
 logging.basicConfig(level=logging.DEBUG)
-s = Mistral(debug_logger=logging.getLogger("kdmistralai"))
+s = KdMistral(debug_logger=logging.getLogger("kdmistralai"))
 ```
 
 You can also enable a default debug logger by setting an environment variable `MISTRAL_DEBUG` to true.

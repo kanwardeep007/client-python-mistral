@@ -17,16 +17,17 @@ Get a list of fine-tuning jobs for your organization and user.
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="jobs_api_routes_fine_tuning_get_fine_tuning_jobs" method="get" path="/v1/fine_tuning/jobs" -->
 ```python
-from kdmistralai import Mistral
+from kdmistralai import KdMistral
 import os
 
 
-with Mistral(
+with KdMistral(
     api_key=os.getenv("MISTRAL_API_KEY", ""),
-) as mistral:
+) as kd_mistral:
 
-    res = mistral.fine_tuning.jobs.list(page=0, page_size=100, created_by_me=False)
+    res = kd_mistral.fine_tuning.jobs.list(page=0, page_size=100, created_by_me=False)
 
     # Handle response
     print(res)
@@ -65,16 +66,17 @@ Create a new fine-tuning job, it will be queued for processing.
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="jobs_api_routes_fine_tuning_create_fine_tuning_job" method="post" path="/v1/fine_tuning/jobs" -->
 ```python
-from kdmistralai import Mistral
+from kdmistralai import KdMistral
 import os
 
 
-with Mistral(
+with KdMistral(
     api_key=os.getenv("MISTRAL_API_KEY", ""),
-) as mistral:
+) as kd_mistral:
 
-    res = mistral.fine_tuning.jobs.create(model="Camaro", hyperparameters={
+    res = kd_mistral.fine_tuning.jobs.create(model="Camaro", hyperparameters={
         "learning_rate": 0.0001,
     }, invalid_sample_skip_percentage=0)
 
@@ -116,16 +118,17 @@ Get a fine-tuned job details by its UUID.
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="jobs_api_routes_fine_tuning_get_fine_tuning_job" method="get" path="/v1/fine_tuning/jobs/{job_id}" -->
 ```python
-from kdmistralai import Mistral
+from kdmistralai import KdMistral
 import os
 
 
-with Mistral(
+with KdMistral(
     api_key=os.getenv("MISTRAL_API_KEY", ""),
-) as mistral:
+) as kd_mistral:
 
-    res = mistral.fine_tuning.jobs.get(job_id="c167a961-ffca-4bcf-93ac-6169468dd389")
+    res = kd_mistral.fine_tuning.jobs.get(job_id="c167a961-ffca-4bcf-93ac-6169468dd389")
 
     # Handle response
     print(res)
@@ -155,16 +158,17 @@ Request the cancellation of a fine tuning job.
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="jobs_api_routes_fine_tuning_cancel_fine_tuning_job" method="post" path="/v1/fine_tuning/jobs/{job_id}/cancel" -->
 ```python
-from kdmistralai import Mistral
+from kdmistralai import KdMistral
 import os
 
 
-with Mistral(
+with KdMistral(
     api_key=os.getenv("MISTRAL_API_KEY", ""),
-) as mistral:
+) as kd_mistral:
 
-    res = mistral.fine_tuning.jobs.cancel(job_id="6188a2f6-7513-4e0f-89cc-3f8088523a49")
+    res = kd_mistral.fine_tuning.jobs.cancel(job_id="6188a2f6-7513-4e0f-89cc-3f8088523a49")
 
     # Handle response
     print(res)
@@ -194,16 +198,17 @@ Request the start of a validated fine tuning job.
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="jobs_api_routes_fine_tuning_start_fine_tuning_job" method="post" path="/v1/fine_tuning/jobs/{job_id}/start" -->
 ```python
-from kdmistralai import Mistral
+from kdmistralai import KdMistral
 import os
 
 
-with Mistral(
+with KdMistral(
     api_key=os.getenv("MISTRAL_API_KEY", ""),
-) as mistral:
+) as kd_mistral:
 
-    res = mistral.fine_tuning.jobs.start(job_id="56553e4d-0679-471e-b9ac-59a77d671103")
+    res = kd_mistral.fine_tuning.jobs.start(job_id="56553e4d-0679-471e-b9ac-59a77d671103")
 
     # Handle response
     print(res)

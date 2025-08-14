@@ -19,8 +19,7 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 class BatchJobInTypedDict(TypedDict):
     input_files: List[str]
     endpoint: APIEndpoint
-    model: NotRequired[Nullable[str]]
-    agent_id: NotRequired[Nullable[str]]
+    model: str
     metadata: NotRequired[Nullable[Dict[str, str]]]
     timeout_hours: NotRequired[int]
 
@@ -30,9 +29,7 @@ class BatchJobIn(BaseModel):
 
     endpoint: Annotated[APIEndpoint, PlainValidator(validate_open_enum(False))]
 
-    model: OptionalNullable[str] = UNSET
-
-    agent_id: OptionalNullable[str] = UNSET
+    model: str
 
     metadata: OptionalNullable[Dict[str, str]] = UNSET
 
@@ -40,8 +37,8 @@ class BatchJobIn(BaseModel):
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["model", "agent_id", "metadata", "timeout_hours"]
-        nullable_fields = ["model", "agent_id", "metadata"]
+        optional_fields = ["metadata", "timeout_hours"]
+        nullable_fields = ["metadata"]
         null_default_fields = []
 
         serialized = handler(self)

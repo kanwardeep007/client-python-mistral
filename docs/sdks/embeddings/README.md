@@ -15,16 +15,17 @@ Embeddings
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="embeddings_v1_embeddings_post" method="post" path="/v1/embeddings" -->
 ```python
-from kdmistralai import Mistral
+from kdmistralai import KdMistral
 import os
 
 
-with Mistral(
+with KdMistral(
     api_key=os.getenv("MISTRAL_API_KEY", ""),
-) as mistral:
+) as kd_mistral:
 
-    res = mistral.embeddings.create(model="mistral-embed", inputs=[
+    res = kd_mistral.embeddings.create(model="mistral-embed", inputs=[
         "Embed this sentence.",
         "As well as this one.",
     ])

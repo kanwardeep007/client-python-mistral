@@ -23,7 +23,7 @@ class CompletionArgsTypedDict(TypedDict):
     stop: NotRequired[Nullable[CompletionArgsStopTypedDict]]
     presence_penalty: NotRequired[Nullable[float]]
     frequency_penalty: NotRequired[Nullable[float]]
-    temperature: NotRequired[Nullable[float]]
+    temperature: NotRequired[float]
     top_p: NotRequired[Nullable[float]]
     max_tokens: NotRequired[Nullable[int]]
     random_seed: NotRequired[Nullable[int]]
@@ -41,7 +41,7 @@ class CompletionArgs(BaseModel):
 
     frequency_penalty: OptionalNullable[float] = UNSET
 
-    temperature: OptionalNullable[float] = UNSET
+    temperature: Optional[float] = 0.3
 
     top_p: OptionalNullable[float] = UNSET
 
@@ -73,7 +73,6 @@ class CompletionArgs(BaseModel):
             "stop",
             "presence_penalty",
             "frequency_penalty",
-            "temperature",
             "top_p",
             "max_tokens",
             "random_seed",

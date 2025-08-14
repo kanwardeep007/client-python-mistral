@@ -16,16 +16,17 @@ FIM completion.
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="fim_completion_v1_fim_completions_post" method="post" path="/v1/fim/completions" -->
 ```python
-from kdmistralai import Mistral
+from kdmistralai import KdMistral
 import os
 
 
-with Mistral(
+with KdMistral(
     api_key=os.getenv("MISTRAL_API_KEY", ""),
-) as mistral:
+) as kd_mistral:
 
-    res = mistral.fim.complete(model="codestral-2405", prompt="def", top_p=1, stream=False, suffix="return a+b")
+    res = kd_mistral.fim.complete(model="codestral-2405", prompt="def", top_p=1, stream=False, suffix="return a+b")
 
     # Handle response
     print(res)
@@ -65,16 +66,17 @@ Mistral AI provides the ability to stream responses back to a client in order to
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="stream_fim" method="post" path="/v1/fim/completions#stream" -->
 ```python
-from kdmistralai import Mistral
+from kdmistralai import KdMistral
 import os
 
 
-with Mistral(
+with KdMistral(
     api_key=os.getenv("MISTRAL_API_KEY", ""),
-) as mistral:
+) as kd_mistral:
 
-    res = mistral.fim.stream(model="codestral-2405", prompt="def", top_p=1, stream=True, suffix="return a+b")
+    res = kd_mistral.fim.stream(model="codestral-2405", prompt="def", top_p=1, stream=True, suffix="return a+b")
 
     with res as event_stream:
         for event in event_stream:

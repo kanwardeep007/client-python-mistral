@@ -26,9 +26,7 @@ class CompletionFTModelOutTypedDict(TypedDict):
     id: str
     created: int
     owned_by: str
-    workspace_id: str
     root: str
-    root_version: str
     archived: bool
     capabilities: FTModelCapabilitiesOutTypedDict
     job: str
@@ -47,11 +45,7 @@ class CompletionFTModelOut(BaseModel):
 
     owned_by: str
 
-    workspace_id: str
-
     root: str
-
-    root_version: str
 
     archived: bool
 

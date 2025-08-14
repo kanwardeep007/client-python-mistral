@@ -279,3 +279,13 @@ Based on:
 - [python v1.10.0] .
 ### Releases
 - [PyPI v1.10.0] https://pypi.org/project/kdmistralai/1.10.0 - .
+
+## 2025-08-14 16:26:34
+### Changes
+Based on:
+- OpenAPI Doc  
+- Speakeasy CLI 1.603.2 (2.681.8) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [python v1.10.1] .
+### Releases
+- [PyPI v1.10.1] https://pypi.org/project/kdmistralai/1.10.1 - .

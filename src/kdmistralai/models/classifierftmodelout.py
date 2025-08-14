@@ -27,9 +27,7 @@ class ClassifierFTModelOutTypedDict(TypedDict):
     id: str
     created: int
     owned_by: str
-    workspace_id: str
     root: str
-    root_version: str
     archived: bool
     capabilities: FTModelCapabilitiesOutTypedDict
     job: str
@@ -49,11 +47,7 @@ class ClassifierFTModelOut(BaseModel):
 
     owned_by: str
 
-    workspace_id: str
-
     root: str
-
-    root_version: str
 
     archived: bool
 

@@ -16,16 +16,17 @@ Chat Completion
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="chat_completion_v1_chat_completions_post" method="post" path="/v1/chat/completions" -->
 ```python
-from kdmistralai import Mistral
+from kdmistralai import KdMistral
 import os
 
 
-with Mistral(
+with KdMistral(
     api_key=os.getenv("MISTRAL_API_KEY", ""),
-) as mistral:
+) as kd_mistral:
 
-    res = mistral.chat.complete(model="mistral-small-latest", messages=[
+    res = kd_mistral.chat.complete(model="mistral-small-latest", messages=[
         {
             "content": "Who is the best French painter? Answer in one short sentence.",
             "role": "user",
@@ -78,16 +79,17 @@ Mistral AI provides the ability to stream responses back to a client in order to
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="stream_chat" method="post" path="/v1/chat/completions#stream" -->
 ```python
-from kdmistralai import Mistral
+from kdmistralai import KdMistral
 import os
 
 
-with Mistral(
+with KdMistral(
     api_key=os.getenv("MISTRAL_API_KEY", ""),
-) as mistral:
+) as kd_mistral:
 
-    res = mistral.chat.stream(model="mistral-small-latest", messages=[
+    res = kd_mistral.chat.stream(model="mistral-small-latest", messages=[
         {
             "content": "Who is the best French painter? Answer in one short sentence.",
             "role": "user",

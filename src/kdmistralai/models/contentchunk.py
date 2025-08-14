@@ -6,7 +6,6 @@ from .filechunk import FileChunk, FileChunkTypedDict
 from .imageurlchunk import ImageURLChunk, ImageURLChunkTypedDict
 from .referencechunk import ReferenceChunk, ReferenceChunkTypedDict
 from .textchunk import TextChunk, TextChunkTypedDict
-from .thinkchunk import ThinkChunk, ThinkChunkTypedDict
 from kdmistralai.utils import get_discriminator
 from pydantic import Discriminator, Tag
 from typing import Union
@@ -21,7 +20,6 @@ ContentChunkTypedDict = TypeAliasType(
         ReferenceChunkTypedDict,
         FileChunkTypedDict,
         DocumentURLChunkTypedDict,
-        ThinkChunkTypedDict,
     ],
 )
 
@@ -33,7 +31,6 @@ ContentChunk = Annotated[
         Annotated[TextChunk, Tag("text")],
         Annotated[ReferenceChunk, Tag("reference")],
         Annotated[FileChunk, Tag("file")],
-        Annotated[ThinkChunk, Tag("thinking")],
     ],
     Discriminator(lambda m: get_discriminator(m, "type", "type")),
 ]

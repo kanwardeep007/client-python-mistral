@@ -10,7 +10,6 @@ SSETypes = Literal[
     "conversation.response.error",
     "message.output.delta",
     "tool.execution.started",
-    "tool.execution.delta",
     "tool.execution.done",
     "agent.handoff.started",
     "agent.handoff.done",

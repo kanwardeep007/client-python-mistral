@@ -22,6 +22,7 @@ class BatchJobOutTypedDict(TypedDict):
     id: str
     input_files: List[str]
     endpoint: str
+    model: str
     errors: List[BatchErrorTypedDict]
     status: BatchJobStatus
     created_at: int
@@ -31,8 +32,6 @@ class BatchJobOutTypedDict(TypedDict):
     failed_requests: int
     object: NotRequired[BatchJobOutObject]
     metadata: NotRequired[Nullable[Dict[str, Any]]]
-    model: NotRequired[Nullable[str]]
-    agent_id: NotRequired[Nullable[str]]
     output_file: NotRequired[Nullable[str]]
     error_file: NotRequired[Nullable[str]]
     started_at: NotRequired[Nullable[int]]
@@ -45,6 +44,8 @@ class BatchJobOut(BaseModel):
     input_files: List[str]
 
     endpoint: str
+
+    model: str
 
     errors: List[BatchError]
 
@@ -64,10 +65,6 @@ class BatchJobOut(BaseModel):
 
     metadata: OptionalNullable[Dict[str, Any]] = UNSET
 
-    model: OptionalNullable[str] = UNSET
-
-    agent_id: OptionalNullable[str] = UNSET
-
     output_file: OptionalNullable[str] = UNSET
 
     error_file: OptionalNullable[str] = UNSET
@@ -81,8 +78,6 @@ class BatchJobOut(BaseModel):
         optional_fields = [
             "object",
             "metadata",
-            "model",
-            "agent_id",
             "output_file",
             "error_file",
             "started_at",
@@ -90,8 +85,6 @@ class BatchJobOut(BaseModel):
         ]
         nullable_fields = [
             "metadata",
-            "model",
-            "agent_id",
             "output_file",
             "error_file",
             "started_at",
